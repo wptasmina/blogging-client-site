@@ -5,7 +5,14 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      FontFamily: {
+        'Roboto': ['"Roboto Condensed", serif']
+      },
+      backgroundImage: {
+        bannerImg:  "url('/banner.jpg')",
+      },
+    },
   },
   plugins: [
     require('daisyui'),
