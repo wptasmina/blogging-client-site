@@ -27,7 +27,7 @@ const Newsletter = () => {
           placeholder="Enter your email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="p-2 border border-gray-300 md:rounded-l-md rounded-md w-72"
+          className="p-2 border outline-none border-gray-300 md:rounded-l-md rounded-md w-72"
           required
         />
         <button
@@ -37,7 +37,7 @@ const Newsletter = () => {
           Subscribe
         </button>
       </form>
-      <ToastContainer />
+      <ToastContainer position="top-center" />
     </div>
   );
 };

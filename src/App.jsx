@@ -11,9 +11,9 @@ function App() {
     <>
       <div>
         <Navbar />
-        {/* <div className="min-h-[calc(100vh-360px)] "> */}
+        <div className="min-h-[calc(100vh-360px)] ">
         <Outlet></Outlet>
-        {/* </div> */}
+        </div>
         <Footer />
       </div>
       
