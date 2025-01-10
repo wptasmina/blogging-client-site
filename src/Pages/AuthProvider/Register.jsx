@@ -11,19 +11,21 @@ export default function Register() {
   const {handleRegister} = useContext(authContext)
   const handleSubmit = (e) => {
     e.preventDefault();
-    const form = new FormData(e.target);
+    const form = e.target;
 
-    const name = e.target.name.value;
-    const email = e.target.email.value;
-    const password = e.target.password.value;
-    const conPassword = e.target.confirmPass.value;
-    const photoURL = e.target.photoURL.value;
+    const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    const conPassword = form.confirmPass.value;
+    const photoURL = form.photoURL.value;
 
-    console.log(form,name,email,password,conPassword,photoURL )
+    // console.log(form,name,email,password,conPassword,photoURL )
 
-    handleRegister(email, password)
+    handleRegister(email, password).then(res=>{
+      // console.log(res)
+    })
 
-    // form.reset()
+    form.reset()
 
   }
 
@@ -31,10 +33,10 @@ export default function Register() {
     <>
     <div className="bg-[#EDF2FA]">
       <div className="hero">
-      <div className="hero-content border w-11/12 mx-auto my-10 flex-col lg:flex-row-reverse">
+      <div className="hero-content w-11/12 mx-auto sm:my-10 my-4 flex-col md:flex-row-reverse">
         <div className="text-center lg:text-left">
-          <h1 className="text-5xl font-bold text-center">Register now!</h1>
-          <img src={regImg} className=" w-full my-6" alt="image" />
+          <h1 className="md:text-4xl text-2xl font-bold text-center">Register now!</h1>
+          <img src={regImg} className="sm:w-full w-40 md:my-6" alt="image" />
         </div>
         <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-xl">
 
@@ -67,7 +69,7 @@ export default function Register() {
               <label className="label">
                 <span className="label-text">PhotoURL</span>
               </label>
-              <input type="file" placeholder="Photo URL" name="photoURL" className="input input-bordered focus:outline-none focus:border-blue-300" required />
+              <input type="file" placeholder="Photo URL" name="photoURL" className="input input-bordered p-2 focus:outline-none focus:border-blue-300" required />
             </div>
             <div className="form-control mt-6">
               <button className="btn bg-blue-500 border-0 text-white text-lg hover:bg-blue-500 btn-primary">Register</button>

@@ -61,6 +61,7 @@ export default function AuthProvider({children}) {
 
   // Register
   const handleRegister = ( email, password ) =>{
+    // console.log(auth)
     return createUserWithEmailAndPassword( auth, email, password )
   }
   //Login
@@ -97,8 +98,8 @@ export default function AuthProvider({children}) {
     loading,
     handleRegister,
     handleLogin,
-    handleLogOut,
-    handleGoogleLogin
+    handleGoogleLogin,
+    handleLogOut
   }
   
 
