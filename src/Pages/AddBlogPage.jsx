@@ -48,7 +48,7 @@ export default function AddBlogPage() {
         <div className='grid md:grid-cols-2 grid-cols-1 gap-6'>
           <div>
             <label className="block text-lg font-medium text-gray-700 pb-2">
-            Title:
+            Blog Title:
             </label>
               <input type="text" placeholder='Enter your title' name="title" required className="w-full outline-none px-3 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#60e49991]" />
           </div>
@@ -58,13 +58,20 @@ export default function AddBlogPage() {
             </label>
               <input type="text" placeholder='Enter your Image URL' name="imageUrl" required className="w-full outline-none px-3 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#60e49991]" />
           </div>
+
+          <div className=''>
+            <label className="block text-lg font-medium text-gray-700 pb-2">
+             Date:
+            </label>
+              <input type="date" placeholder='Enter your Image URL' name="date" required className="w-full outline-none px-3 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#60e49991]" />
+          </div>
           
           <div>
             <label className="block text-lg font-medium text-gray-700 pb-2">
             Category:
             </label>
           <select name="category" defaultValue="" className="select select-bordered w-full border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#60e49991]">
-          <option value="" disabled>Category</option> 
+          <option value="" disabled>Select a Category</option> 
             <option>News</option>
             <option>Web Developer</option>
             <option>Travel</option>

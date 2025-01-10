@@ -12,6 +12,7 @@ import FeaturedBlogs from "../Pages/FeaturedBlogs";
 import LoginPage from './../Pages/AuthProvider/LoginPage';
 import Register from "../Pages/AuthProvider/Register";
 import BlogDetailsPage from "../Pages/BlogDetailsPage";
+import UpdateBlogePage from "../Pages/UpdateBlogePage";
 
 
 export const router = createBrowserRouter([
@@ -23,7 +24,7 @@ export const router = createBrowserRouter([
         {
           path: "/",
           element: <HomePage />,
-          loader: () => fetch('http://localhost:5000/blog')
+          loader: () => fetch('http://localhost:5000/homeblog')
         },
         {
           path: "/allblogs",
@@ -45,6 +46,10 @@ export const router = createBrowserRouter([
         {
           path: "/details",
           element: <BlogDetailsPage />
+        },
+        {
+          path: "/updateBloge",
+          element: <UpdateBlogePage />
         },
         {
           path: "/login",

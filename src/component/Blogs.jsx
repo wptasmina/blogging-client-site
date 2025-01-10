@@ -6,23 +6,22 @@ import { NavLink } from 'react-router-dom';
 export default function Blogs({ blog}) {
   const {title, imageUrl, shortDesc, longDesc, category} = blog
 
-  console.log(blog)
 
   return (
 
 <div className="">
- <div className="card card-compact bg-white shadow-xl">
+ <div className="card card-compact border p-1 bg-white shadow-xl">
     <figure>
       <img
-        className="w-full h-[350px] object-cover"
+        className="w-full h-[250px] object-cover"
         src={imageUrl}
         alt="Product image"
       />
     </figure>
-    <div className="card-body">
+    <div className="card-body  ">
       <h2 className="card-title text-2xl text-gray-800 font-bold">{title}</h2>
-      <p className=''>{shortDesc}</p>
-      <p className=''>{longDesc}</p>
+      <p className='font-normal'>{shortDesc}</p>
+      <p className='text-gray-600 text-md font-normal'>{longDesc}</p>
       <p className='text-lg text-gray-800 font-medium'>{category}</p>
       <div className="card-actions justify-center   pt-4">
        <NavLink to="/details">

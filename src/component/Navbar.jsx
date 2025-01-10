@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import logo from '../assets/logo-gl.png'
+import Profile from './Profile'
 
 
 export default function Navbar() {
@@ -8,7 +9,7 @@ export default function Navbar() {
   <div className="navbar p-0 w-11/12 mx-auto ">
   <div className="navbar-start p-0">
     <div className="dropdown">
-      <div tabIndex={0} role="button" className=" btn-ghost bg-white p-1 rounded-lg mr-1 lg:hidden">
+      <div tabIndex={0} role="button" className=" btn-ghost hover:bg-slate-400 bg-white p-1 rounded-lg mr-1 lg:hidden">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-5 w-5"
@@ -57,15 +58,13 @@ export default function Navbar() {
       <li className='text-white bg-gray-800 text-md font-medium rounded-md'><NavLink to="/featuredblogs">Featured Blogs</NavLink></li>
     </ul>
   </div>
+
   <div className="navbar-end">
     
       <NavLink to="/register">
-        <button className=" text-white text-md font-medium px-4 py-1 border-2 border-gray-800 focus:bg-gray-700  focus:border-gray-700 rounded-md bg-gray-800">
-          Register
-        </button>
+        <Profile />
       </NavLink>
    
-    
     <NavLink to="/login">
       <button className=" text-white text-md font-medium px-6 py-1 border-2 border-gray-800 focus:bg-gray-700  focus:border-gray-700  rounded-md bg-gray-800 ml-4">
         Login
