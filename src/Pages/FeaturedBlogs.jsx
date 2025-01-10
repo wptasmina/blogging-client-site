@@ -9,10 +9,10 @@ export default function FeaturedBlogs() {
     <p className="text-center text-lg md:w-1/2 mx-auto text-gray-600 font-medium pt-2">Discover the top 10 features that make it the future of healthcare, technology, news, travel, business and lifestyle.</p>
   
 
-  <div className="overflow-x-auto bg-[#f8fafcec] rounded-md my-10">
+  <div className="overflow-x-auto bg-[#f8fafcec] border rounded-md my-10">
   <table className="table">
     {/* head */}
-    <thead className='bg-black text-white '>
+    <thead className='bg-black text-white text-xl'>
       <tr >
         <th>Top 10</th>
         <th>Image & Auther</th>

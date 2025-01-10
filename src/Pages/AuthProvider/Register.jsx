@@ -24,9 +24,7 @@ export default function Register() {
     handleRegister(email, password).then(res=>{
       // console.log(res)
     })
-
     form.reset()
-
   }
 
   return (
@@ -75,7 +73,6 @@ export default function Register() {
               <button className="btn bg-blue-500 border-0 text-white text-lg hover:bg-blue-500 btn-primary">Register</button>
             </div>
           </form>
-          
         </div>
       </div>
     </div>

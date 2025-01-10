@@ -15,13 +15,13 @@ export default function BlogDetailsPage() {
       <div className='flex flex-row items-center gap-2'>
         <img src={profile} className='w-12 h-12 object-cover rounded-full shadow border border-blue-300 p-1' alt="author image" />
         <div>
-          <h2 className="text-lg font-bold text-blue-600">Samira Sarwar</h2>
+          <h2 className="text-md font-bold text-blue-500">Samira Sarwar</h2>
           <p className="text-xs font-bold text-gray-500">Email: tasmi345@gmail.com </p>
         </div>
       </div>
 
     <div>
-      <Link to="/updateBloge" ><FaPenToSquare className="text-2xl shadow cursor-pointer" /></Link>
+      <Link to="/updateBloge" ><FaPenToSquare className="text-2xl text-blue-500 shadow cursor-pointer" /></Link>
     </div>
   </div>
 

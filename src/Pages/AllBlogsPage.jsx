@@ -65,7 +65,6 @@ export default function AllBlogsPage() {
     </div>
     </div>
 
-
     <div className='md:w-11/12 mx-auto '>
       <p className='font-medium mb-4'>Total Blogs: {blogs.length}</p>
       {/* All Blogs List card */}

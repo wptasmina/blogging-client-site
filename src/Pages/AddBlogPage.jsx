@@ -8,20 +8,22 @@ export default function AddBlogPage() {
 
   const contextValue = useContext(authContext)
 
-
  const handleAddBlog = (e) =>{
   e.preventDefault();
 
   const form = e.target;
 
+  const userName = form.userName.value;
+  const email = form.email.value;
+  const userImage = form.userImage.value;
   const title = form.title.value;
   const imageUrl = form.imageUrl.value;
+  const date = form.date.value;
   const category = form.category.value;
   const shortDesc = form.shortDesc.value;
   const longDesc = form.longDesc.value;
 
-  const newAddBlog = { title, imageUrl, category, shortDesc, longDesc }
-  console.log(newAddBlog)
+  const newAddBlog = { userName, email, userImage, title, imageUrl, date, category, shortDesc, longDesc }
 
   // send data to the server
   fetch('http://localhost:5000/blogger', {
@@ -48,9 +50,28 @@ export default function AddBlogPage() {
         <div className='grid md:grid-cols-2 grid-cols-1 gap-6'>
           <div>
             <label className="block text-lg font-medium text-gray-700 pb-2">
-            Blog Title:
+            User Name:
             </label>
-              <input type="text" placeholder='Enter your title' name="title" required className="w-full outline-none px-3 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#60e49991]" />
+              <input type="text" placeholder='Enter your title' name="userName" required className="w-full outline-none px-3 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#60e49991]" />
+          </div>
+          <div>
+            <label className="block text-lg font-medium text-gray-700 pb-2">
+            Email:
+            </label>
+              <input type="email" placeholder='Enter your email' name="email" required className="w-full outline-none px-3 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#60e49991]" />
+          </div>
+
+          <div>
+            <label className="block text-lg font-medium text-gray-700 pb-2">
+             User Image:
+            </label>
+            <input type="url" placeholder='Enter your Photo' name="userImage" required className="w-full outline-none px-3 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#60e49991]" />
+          </div>
+          <div>
+            <label className="block text-lg font-medium text-gray-700 pb-2">
+              Blog Title:
+            </label>
+            <input type="text" placeholder='Enter your title' name="title" required className="w-full outline-none px-3 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#60e49991]" />
           </div>
           <div className=''>
             <label className="block text-lg font-medium text-gray-700 pb-2">
@@ -119,7 +140,7 @@ export default function AddBlogPage() {
           </div>
         </form>
       </div>
-          <ToastContainer  position='top-center' />
+        <ToastContainer  position='top-center' />
     </>
   )
 }
