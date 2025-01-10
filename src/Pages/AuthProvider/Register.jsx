@@ -1,13 +1,12 @@
-
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 // import { FaEye, FaEyeSlash } from "react-icons/fa";
+
+import toast, { Toaster } from 'react-hot-toast';
 import regImg from '../../assets/register.png'
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { authContext } from './AuthProvider';
 
 export default function Register() {
-  const notify = () => toast("A new Blog has been added !");
+  // const notify = () => toast("A new Blog has been added !");
 
   const {handleRegister} = useContext(authContext)
   const handleSubmit = (e) => {
@@ -17,7 +16,7 @@ export default function Register() {
     const name = e.target.name.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
-    const conPassword = e.target.conformemail.value;
+    const conPassword = e.target.confirmPass.value;
     const photoURL = e.target.photoURL.value;
 
     console.log(form,name,email,password,conPassword,photoURL )
@@ -31,8 +30,8 @@ export default function Register() {
   return (
     <>
     <div className="bg-[#EDF2FA]">
-      <div className="hero min-h-screen w-11/12 mx-auto">
-      <div className="hero-content flex-col lg:flex-row-reverse">
+      <div className="hero">
+      <div className="hero-content border w-11/12 mx-auto my-10 flex-col lg:flex-row-reverse">
         <div className="text-center lg:text-left">
           <h1 className="text-5xl font-bold text-center">Register now!</h1>
           <img src={regImg} className=" w-full my-6" alt="image" />
@@ -71,14 +70,15 @@ export default function Register() {
               <input type="file" placeholder="Photo URL" name="photoURL" className="input input-bordered focus:outline-none focus:border-blue-300" required />
             </div>
             <div className="form-control mt-6">
-              <button onClick={notify} className="btn bg-blue-500 border-0 text-white text-lg hover:bg-blue-500 btn-primary">Register</button>
+              <button className="btn bg-blue-500 border-0 text-white text-lg hover:bg-blue-500 btn-primary">Register</button>
             </div>
           </form>
-          <ToastContainer />
+          
         </div>
       </div>
     </div>
     </div>
+    <Toaster></Toaster>
     </>
   )
 }

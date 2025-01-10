@@ -11,12 +11,13 @@ export default function LoginPage() {
   // Login
   const handleSubmit = (e) => {
     e.preventDefault();
+    const form = e.target;
     const email = e.target.email.value;
     const password = e.target.password.value;
 
-    console.log(email,password)
+    console.log( form, email, password )
 
-    handleLogin(email, password)
+    handleLogin( email, password )
   }
 
   return (
@@ -35,7 +36,7 @@ export default function LoginPage() {
           <label className="label">
             <span className="label-text">Email</span>
           </label>
-          <input type="email" placeholder="email" className="input input-bordered focus:outline-none focus:border-blue-300" required />
+          <input type="email" placeholder="email" name="email" className="input input-bordered focus:outline-none focus:border-blue-300" required />
         </div>
         <div className="form-control">
           <label className="label">
@@ -52,11 +53,11 @@ export default function LoginPage() {
 
         <div className="divider">OR</div>
 
-        <div className="flex justify-between border py-3 rounded-full hover:bg-[#EDF2FA]"> 
-          <img src={gImg} className="w-8 pl-4"/>
-          <div className="text-center w-full px-4 font-medium cursor-pointer" onClick={handleGoogleLogin}>
+        <div className="flex justify-between border py-2 rounded-full hover:bg-[#EDF2FA]"> 
+          <img src={gImg} className="w-6 border"/>
+          <h4 className="text-center border w-full font-medium cursor-pointer" onClick={handleGoogleLogin}>
             Continue with Google
-           </div>
+           </h4>
         </div>
           <p className="text-md text-center">New to the Website? plase <NavLink to="/register"> <span className="text-[#1B66C9] font-medium"> Register</span></NavLink></p> 
 
