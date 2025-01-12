@@ -1,15 +1,16 @@
 import React, { useContext } from 'react'
-import { authContext } from './AuthProvider/AuthProvider';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import AuthContext from './AuthProvider/AuthContext';
 
 export default function AddBlogPage() {
   const notify = () => toast("A new Blog has been added !");
 
-  const contextValue = useContext(authContext)
+  const contextValue = useContext(AuthContext) 
 
- const handleAddBlog = (e) =>{
-  e.preventDefault();
+
+  const handleAddBlog = (e) =>{
+    e.preventDefault();
 
   const form = e.target;
 
@@ -23,7 +24,8 @@ export default function AddBlogPage() {
   const shortDesc = form.shortDesc.value;
   const longDesc = form.longDesc.value;
 
-  const newAddBlog = { userName, email, userImage, title, imageUrl, date, category, shortDesc, longDesc }
+  const newAddBlog = { userName, email, userImage, title, imageUrl,
+     date, category, shortDesc, longDesc }
 
   // send data to the server
   fetch('http://localhost:5000/blogger', {
@@ -65,7 +67,7 @@ export default function AddBlogPage() {
             <label className="block text-lg font-medium text-gray-700 pb-2">
              User Image:
             </label>
-            <input type="url" placeholder='Enter your Photo' name="userImage" required className="w-full outline-none px-3 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#60e49991]" />
+            <input type="text" id="fileInput" placeholder='Enter your Photo' name="userImage" required className="w-full outline-none px-3 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#60e49991]" />
           </div>
           <div>
             <label className="block text-lg font-medium text-gray-700 pb-2">

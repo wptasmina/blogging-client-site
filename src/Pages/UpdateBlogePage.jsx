@@ -31,7 +31,7 @@ export default function UpdateBlogePage() {
             <label className="block text-lg font-medium text-gray-700 pb-2">
              User Image:
             </label>
-              <input type="file" placeholder='Enter your Image URL' name="userImage" required className="w-full outline-none px-3 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#60e49991]" />
+              <input type="text" placeholder='Enter your Image URL' name="userImage" required className="w-full outline-none px-3 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#60e49991]" />
           </div>
 
           <div className=''>

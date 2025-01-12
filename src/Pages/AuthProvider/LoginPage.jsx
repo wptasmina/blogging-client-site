@@ -1,12 +1,12 @@
 import { useContext } from "react"
 import loginImg from "../../assets/login.png"
-import { authContext } from "./AuthProvider"
+import { AuthContext } from "./AuthProvider"
 import gImg from "../../assets/google.webp"
 import { NavLink } from "react-router-dom";
 
 export default function LoginPage() {
 //google
-  const {handleGoogleLogin, handleLogin }  = useContext(authContext);
+  const { handleGoogleLogin, handleLogin }  = useContext(AuthContext);
 
   // Login
   const handleSubmit = (e) => {
@@ -21,20 +21,25 @@ export default function LoginPage() {
     // console.log(form, email, password )
 
     handleLogin( email, password ).then(res=>{
-      // console.log(res)
+      console.log(res)
     })
+    .catch(error =>{
+      console.log(error)
+    })
+
     form.reset()
   }
 
   return (
   <>
   <div className="bg-[#EDF2FA]">
-  <div className="hero  min-h-screen w-11/12 mx-auto">
-  <div className="hero-content flex-col sm:my-10 my-4 md:flex-row-reverse">
+  <div className="hero min-h-screen w-11/12 mx-auto">
+  <div className="hero-content p-0 flex-col sm:my-10 my-4 md:flex-row-reverse">
     <div className="text-center lg:text-left">
       <h1 className="md:text-4xl text-2xl font-bold text-center">Login now!</h1>
       <img src={loginImg} className="sm:w-full w-40 md:my-6" alt="image" />
     </div>
+
     <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-md">
 
       <form onSubmit={handleSubmit} className="card-body">

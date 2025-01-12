@@ -1,27 +1,24 @@
-import React from 'react'
+
 import Blogs from '../component/Blogs'
 import { useLoaderData } from 'react-router-dom'
 
 export default function AllBlogsPage() {
   const blogs = useLoaderData()
-  if (!blogs || !Array.isArray(blogs)) {
-    return <p>Loading...</p>; // ডেটা লোড হওয়ার আগে একটি লোডিং বার্তা দেখান
-  }
 
   return (
    <>
   {/* Text Start Section */}
 
-   <div className=' flex flex-col justify-center items-center'>
+   <div className=' flex flex-col justify-center items-center mt-6'>
     <h2 className='text-3xl text-gray-800 font-extrabold text-center'>All Blog Posts </h2>
 
     <p className='text-md text-gray-600 font-medium pt-2 text-center'>Browse all blogs in one place! Discover a variety of stories, insights, and ideas curated just for you.</p>
    </div>
-   <div className='bg-white mb-10'>
+   <div className='bg-white mt-6'>
    {/* Filter By Category */}
-    <div className="bg-white my-10 w-11/12 mx-auto md:flex justify-center items-center gap-4">
+    <div className="bg-white mb-6 w-11/12 mx-auto md:flex justify-center items-center gap-4">
     <div>
-    <select defaultValue="" className="select select-bordered  sm:mb-0 mb-4 w-70 max-w-xs">
+    <select defaultValue="" className="select select-bordered sm:mb-0 mb-4 w-70 max-w-xs">
       <option value="" disabled>Filter By Category</option>
       <option>Technology</option>
       <option>Developer</option>
@@ -65,7 +62,7 @@ export default function AllBlogsPage() {
     </div>
     </div>
 
-    <div className='md:w-11/12 mx-auto '>
+    <div className='md:w-11/12 mx-auto pb-8'>
       <p className='font-medium mb-4'>Total Blogs: {blogs.length}</p>
       {/* All Blogs List card */}
        <div className="p-0 px-2 md:px-0 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">

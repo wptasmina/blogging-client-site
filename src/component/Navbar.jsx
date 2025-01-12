@@ -1,9 +1,25 @@
 import { NavLink } from 'react-router-dom'
 import logo from '../assets/logo-gl.png'
 import Profile from './Profile'
+import { useContext } from 'react'
+import { AuthContext } from '../Pages/AuthProvider/AuthProvider'
 
 
 export default function Navbar() {
+
+  const { user, signOutUser} = useContext(AuthContext);
+
+  const handeleSignOut = () => {
+    signOutUser()
+    .then(() =>{
+      console.log("Successfull Log Out!")
+    }).catch(error => {
+
+      console.log("Field to Log Out.");
+    })
+  
+  }
+  
   return (
   <div className='sticky top-0 z-50 w-full bg-gray-800/90 backdrop:blur-lg'>
   <div className="navbar p-0 w-11/12 mx-auto ">
@@ -60,16 +76,27 @@ export default function Navbar() {
   </div>
 
   <div className="navbar-end">
-    
-      <NavLink to="/register">
-        <Profile />
-      </NavLink>
+      {
+        user ? <>
+          <button onClick={handeleSignOut} className=" ">
+           <Profile />
+          </button>
+        </> : <>
+        {/* <NavLink className="text-white px-4 py-2 bg-gray-800 rounded-md" to="/register">
+          Register
+        </NavLink> */}
+        <NavLink to="/login">
+          <button className=" text-white text-md font-medium px-6 py-1 border-2 border-gray-800 focus:bg-gray-700  focus:border-gray-700  rounded-md bg-gray-800 ml-4">
+            Login
+          </button>
+        </NavLink>
+        </>
+      }
+      
+      
    
-    <NavLink to="/login">
-      <button className=" text-white text-md font-medium px-6 py-1 border-2 border-gray-800 focus:bg-gray-700  focus:border-gray-700  rounded-md bg-gray-800 ml-4">
-        Login
-      </button>
-    </NavLink>
+   
+   
   </div>
 
 </div>

@@ -37,7 +37,8 @@ export const router = createBrowserRouter([
         },
         {
           path: "/wishlist",
-          element: <WishlistPage />
+          element: <WishlistPage />,
+          loader: () => fetch('http://localhost:5000/blog')
         },
         {
           path: "/featuredblogs",

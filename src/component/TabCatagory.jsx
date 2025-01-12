@@ -47,7 +47,7 @@ import "react-tabs/style/react-tabs.css";
 const tabs = ["Web Development", "News", "Technology", "Travel", "LifeStyle", "Business"]
 
 const tabPanels = [
-  "Web Development for Tab 1",
+ <TabPanel/>,
   "News for Tab 2",
   "Technology for Tab 3",
   "Travel for Tab 4",
@@ -68,7 +68,8 @@ export default function TabCatagory() {
       </TabList>
       </div>
       {tabPanels.map((panel, index) => (
-        <TabPanel key={index}>{panel}</TabPanel>
+        <TabPanel key={index} panel={panel}>{panel}</TabPanel>
+        // <TabPanel key={index} panel={panel}>{panel}</TabPanel>
       ))}
     </Tabs>
    </div>

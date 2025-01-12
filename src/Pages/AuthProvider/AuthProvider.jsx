@@ -1,6 +1,5 @@
 import { createContext, useEffect, useState } from 'react';
 import { 
-  //  getAuth,
    createUserWithEmailAndPassword, 
    GoogleAuthProvider,
    onAuthStateChanged, 
@@ -13,31 +12,13 @@ import auth from "../../Firebase/firebase.init";
 // import { FaSpinner } from "react-icons/fa";
 // import { toast, useToast } from "react-toastify";
 
-export const authContext = createContext()
+export const AuthContext = createContext()
 
 export default function AuthProvider({children}) {
-  // const auth = getAuth(app);
-
-
 
   const [user, setUser] = useState(null)
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
-      if (currentUser) {
-        setUser(currentUser);
-        setLoading(false);
-      } else {
-        setUser(null);
-        setLoading(false);
-      }
-    });
-
-    return () => {
-      unSubscribe();
-    };
-  }, []);
 
   // if (currentUser) {
   //       setUser(currentUser);
@@ -62,28 +43,48 @@ export default function AuthProvider({children}) {
   // Register
   const handleRegister = ( email, password ) =>{
     // console.log(auth)
+    setLoading(true);
     return createUserWithEmailAndPassword( auth, email, password )
   }
   //Login
   const handleLogin = ( email, password) =>{
+    setLoading(true);
    return signInWithEmailAndPassword(auth, email, password)
 
   }
-
     // GoogleProvider create
     const Provider = new GoogleAuthProvider(); 
 
     // GoogleProvider
     const handleGoogleLogin = (e) =>{
+      setLoading(true);
       return signInWithPopup(auth, Provider)
     }
 
   //LogOut
-  const handleLogOut = () =>{
+  const signOutUser = () =>{
+    setLoading(true);
     return signOut(auth)
   }
 
+  useEffect(() => {
+    const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
+      // console.log(currentUser)
+      if (currentUser) {
+        setUser(currentUser);
+        setLoading(false);
+      } else {
+        setUser(null);
+        setLoading(false);
+      }
+    });
 
+    return () => {
+      unSubscribe();
+    };
+  }, []);
+
+  
   // if (loading) {
   //   return (
   //     <div className="flex justify-center items-center h-screen">
@@ -99,28 +100,14 @@ export default function AuthProvider({children}) {
     handleRegister,
     handleLogin,
     handleGoogleLogin,
-    handleLogOut
+    signOutUser
   }
   
-
-  
-  //objerbar
-  // useEffect(()=>{
-  //   const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-  //     console.log(currentUser)
-  //     return ()=>{ 
-  //       unsubscribe()
-  //     }
-      
-  //   })
-  // },[auth])
-
-
-
-
   return (
     <>
-    <authContext.Provider value={authInfo}>{children}</authContext.Provider>
+      <AuthContext.Provider value={authInfo}>
+        {children}
+      </AuthContext.Provider>
     </>
   )
 }

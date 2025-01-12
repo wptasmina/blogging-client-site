@@ -3,12 +3,12 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from 'firebase/auth';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCm8ZH0emWanzjkOmLlh5sExv3SA3MwTso",
-  authDomain: "blogging-dca36.firebaseapp.com",
-  projectId: "blogging-dca36",
-  storageBucket: "blogging-dca36.firebasestorage.app",
-  messagingSenderId: "131424680815",
-  appId: "1:131424680815:web:f41f8de8309a8db6a0c69a"
+  apiKey: import.meta.env.VITE_apiKey,
+  authDomain: import.meta.env.VITE_authDomain,
+  projectId: import.meta.env.VITE_projectId,
+  storageBucket: import.meta.env.VITE_storageBucket,
+  messagingSenderId: import.meta.env.VITE_messagingSenderId,
+  appId: import.meta.env.VITE_appId,
 };
 
 // Initialize Firebase
