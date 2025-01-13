@@ -3,6 +3,7 @@ import loginImg from "../../assets/login.png"
 import { AuthContext } from "./AuthProvider"
 import gImg from "../../assets/google.webp"
 import { NavLink } from "react-router-dom";
+import { toast } from "react-toastify";
 
 export default function LoginPage() {
 //google
@@ -20,7 +21,9 @@ export default function LoginPage() {
     
     // console.log(form, email, password )
 
-    handleLogin( email, password ).then(res=>{
+    handleLogin( email, password )
+    .then(res=>{
+       toast.success("Login success!")
       console.log(res)
     })
     .catch(error =>{

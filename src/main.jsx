@@ -3,7 +3,8 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 
 import { router } from './routes/router';
-import toast, { Toaster } from 'react-hot-toast';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 import {
@@ -18,6 +19,17 @@ createRoot(document.getElementById('root')).render(
     <AuthProvider>
       <RouterProvider router={router} />
     </AuthProvider>
-  <Toaster></Toaster>
+    <ToastContainer
+position="top-right"
+autoClose={5000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick={false}
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="colored"
+/>
   </StrictMode>,
 )

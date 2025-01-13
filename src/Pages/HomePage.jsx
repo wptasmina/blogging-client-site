@@ -18,15 +18,24 @@ export default function HomePage() {
     <TabCatagory />
  
     {/*Home Blog card  */}
-    <h1>blog: {blogs.length}</h1>
+    {/* <h1>blog: {blogs.length}</h1>
     <div className="md:w-11/12 mx-auto p-0 px-2 md:px-0 grid lg:grid-cols-4 md:grid-cols-3 
     sm:grid-cols-2 grid-cols-1 gap-4 mb-10">
       {
         blogs.map(blog => <Blogs key={blog._id} blog={blog} />)
       }
+    </div> */}
+
+    <h1>blog: {blogs.length}</h1>
+    <div className="md:w-11/12 mx-auto p-0 px-2 md:px-0 grid lg:grid-cols-4 md:grid-cols-3 
+    sm:grid-cols-2 grid-cols-1 gap-4 mb-10">
+      {Array.isArray(blogs) && blogs.length > 0 ? (
+        blogs.map(blog => <Blogs key={blog._id} blog={blog} />)
+      ) : (
+        <p>No blogs available</p>
+      )}
     </div>
   
-
     <Newsletter />
     </>
   )

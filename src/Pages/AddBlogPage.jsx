@@ -1,15 +1,20 @@
 import React, { useContext } from 'react'
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+// import { useState } from 'react';
+
 import AuthContext from './AuthProvider/AuthContext';
+import { toast } from 'react-toastify';
+
 
 export default function AddBlogPage() {
-  const notify = () => toast("A new Blog has been added !");
+
 
   const contextValue = useContext(AuthContext) 
 
+  // const [title, setTitle] = useState('');
+  // const [content, setContent] = useState('');
+  // const [successMessage, setSuccessMessage] = useState('');
 
-  const handleAddBlog = (e) =>{
+  const handleSubmit = (e) => {
     e.preventDefault();
 
   const form = e.target;
@@ -37,6 +42,8 @@ export default function AddBlogPage() {
   })
   .then(res => res.json())
   .then(data => {
+    toast.success("Add blog success!")
+
     // console.log(data)
     form.reset()
   })
@@ -48,13 +55,20 @@ export default function AddBlogPage() {
         <h2 className="md:text-4xl text-2xl text-gray-800 font-extrabold pb-2 text-center">Add a New Blog</h2>
         <p className="text-md text-gray-600 font-medium text-center md:w-1/2 mx-auto">Start your journey as a blogger! Create a new blog to share your unique ideas,
       stories, or knowledge with the world.</p>
-      <form onSubmit={handleAddBlog} className="mt-8">
+
+
+      <form onSubmit={handleSubmit} className="mt-8">
         <div className='grid md:grid-cols-2 grid-cols-1 gap-6'>
           <div>
             <label className="block text-lg font-medium text-gray-700 pb-2">
             User Name:
             </label>
-              <input type="text" placeholder='Enter your title' name="userName" required className="w-full outline-none px-3 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#60e49991]" />
+            <input
+            type="text"
+            name="userName"
+            placeholder='Enter your title'  className="w-full outline-none
+             px-3 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-1
+              focus:ring-[#60e49991]" required />
           </div>
           <div>
             <label className="block text-lg font-medium text-gray-700 pb-2">
@@ -133,7 +147,7 @@ export default function AddBlogPage() {
           {/* Submit Button */}
           <div className="flex justify-center mt-8">
             <button 
-              onClick={notify}
+            
               type="submit"
               className="w-full py-3 bg-gray-800/90 text-white text-lg font-semibold rounded-lg focus:outline-none focus:bg-[#0EA64F]"
             >
@@ -142,7 +156,6 @@ export default function AddBlogPage() {
           </div>
         </form>
       </div>
-        <ToastContainer  position='top-center' />
     </>
   )
 }

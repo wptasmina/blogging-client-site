@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Newsletter = () => {
@@ -37,7 +36,6 @@ const Newsletter = () => {
           Subscribe
         </button>
       </form>
-      <ToastContainer position="top-center" />
     </div>
   );
 };

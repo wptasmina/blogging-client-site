@@ -1,8 +1,56 @@
 import React from 'react'
+import { useLoaderData, useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
 
 export default function UpdateBlogePage() {
 
-    const handleUpdateBlog = () =>{}
+  const blog = useLoaderData()
+  const {_id, userImage, userName, email, title, imageUrl,longDesc} = blog
+
+  // console.log(blog)
+
+  const navigate = useNavigate()
+
+  const handleUpdateBlog = (e) =>{
+    e.preventDefault();
+
+    const form = e.target;
+  
+    const userName = form.userName.value;
+    const email = form.email.value;
+    const userImage = form.userImage.value;
+    const title = form.title.value;
+    const imageUrl = form.imageUrl.value;
+    const date = form.date.value;
+    const category = form.category.value;
+    const shortDesc = form.shortDesc.value;
+    const longDesc = form.longDesc.value;
+  
+    const updateBlog = { userName, email, userImage, title, imageUrl,
+       date, category, shortDesc, longDesc }
+
+    // console.log(_id)
+    
+  fetch(`http://localhost:5000/blog/${_id}`, {
+    method: "PUT",
+    headers: {
+      'content-type': "application/json"
+    },
+    body: JSON.stringify(updateBlog)
+  }).then(res => res.json())
+    .then(data => {
+
+      console.log(data)
+
+      if(data.modifiedCount > 0){
+        toast.success('Blog is Updated successfully')
+        navigate(`/details/${_id}`)
+      }
+    })
+
+    form.reset()
+
+    }
 
   return (
     <>
@@ -17,34 +65,34 @@ export default function UpdateBlogePage() {
             <label className="block text-lg font-medium text-gray-700 pb-2">
             User Name:
             </label>
-            <input type="userName" placeholder='Enter your name' name="userName" required className="w-full outline-none px-3 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#60e49991]" />
+            <input type="userName" defaultValue={userName} placeholder='Enter your name' name="userName" required className="w-full outline-none px-3 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#60e49991]" />
           </div>
 
           <div className=''>
             <label className="block text-lg font-medium text-gray-700 pb-2">
             User Email:
             </label>
-            <input type="email" placeholder='Enter your Email' name="email" required className="w-full outline-none px-3 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#60e49991]" />
+            <input type="email" placeholder='Enter your Email' name="email" defaultValue={email}  required className="w-full outline-none px-3 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#60e49991]" />
           </div>
 
           <div>
             <label className="block text-lg font-medium text-gray-700 pb-2">
              User Image:
             </label>
-              <input type="text" placeholder='Enter your Image URL' name="userImage" required className="w-full outline-none px-3 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#60e49991]" />
+              <input type="text" placeholder='Enter your Image URL' name="userImage" defaultValue={userImage}  required className="w-full outline-none px-3 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#60e49991]" />
           </div>
 
           <div className=''>
             <label className="block text-lg font-medium text-gray-700 pb-2">
             Blog Title:
             </label>
-              <input type="text" placeholder='Enter your title' name="title" required className="w-full outline-none px-3 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#60e49991]" />
+              <input type="text" placeholder='Enter your title' name="title" defaultValue={title} required className="w-full outline-none px-3 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#60e49991]" />
           </div>
           <div>
             <label className="block text-lg font-medium text-gray-700 pb-2">
              Image URL:
             </label>
-              <input type="text" placeholder='Enter your Image URL' name="imageUrl" required className="w-full outline-none px-3 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#60e49991]" />
+              <input type="text" placeholder='Enter your Image URL' name="imageUrl"  defaultValue={imageUrl} required className="w-full outline-none px-3 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#60e49991]" />
           </div>
           
           <div>
@@ -97,12 +145,10 @@ export default function UpdateBlogePage() {
         </div>
           {/* Submit Button */}
           <div className="flex justify-center mt-8">
-            <button
-              type="submit"
+            <input
+              type="submit" value="Update Blog"
               className="w-full py-3 bg-[#0EA64F] text-white text-lg font-semibold rounded-lg hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-            >
-              Submit
-            </button>
+            />
           </div>
         </form>
       </div>

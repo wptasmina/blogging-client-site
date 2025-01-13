@@ -1,10 +1,14 @@
 
-import { FaHackerNews, FaRegHeart } from 'react-icons/fa'
+import { FaRegHeart } from 'react-icons/fa'
 import { TbListDetails } from 'react-icons/tb'
 import { NavLink } from 'react-router-dom';
 
 export default function Blogs({ blog }) {
   const { userName, email, userImage, title, imageUrl, date, shortDesc, longDesc, category} = blog
+
+  // const hendleWishList =() =>{
+  // console.log( hendleWishList)
+  // }
 
  return (
 
@@ -26,28 +30,27 @@ export default function Blogs({ blog }) {
      alt="Product image"
    />
  </figure>
- <div className="card-body ">
+ <div className="card-body">
    <h2 className="card-title text-2xl text-gray-800 font-bold">{title}</h2>
    <div className='flex justify-between items-center'>
      <div>
        <p className='text-md text-green-600 font-bold'>{category}</p>
      </div>
-   <div>
-     <p className='font-medium text-gray-900'>{date}</p>
+    <div>
+      <p className='font-medium text-gray-900'>{date}</p>
+    </div>
    </div>
-  
-   </div>
-   <p className='font-normal'>{shortDesc}</p>
-   <p className='text-gray-600 text-md font-normal'>{longDesc}</p>
+   <p className='font-normal'>{shortDesc}...see Moer</p>
+   {/* <p className='text-gray-600 text-md font-normal'>{longDesc}</p> */}
    <div className="card-actions justify-center pt-4">
-    <NavLink to="/details">
+    <NavLink to={`/details/${blog._id}`}>
      <button className="btn bg-white text-black md:w-full hover:text-white btn-primary px-7">
        <TbListDetails />
        Details
      </button>
     </NavLink>
      <NavLink to="/wishlist">
-       <button className="btn bg-white text-black md:w-full hover:text-white btn-primary px-6">
+       <button  className="btn bg-white text-black md:w-full hover:text-white btn-primary px-6">
          <FaRegHeart />
          Wishlist
        </button>

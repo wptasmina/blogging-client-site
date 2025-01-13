@@ -1,9 +1,9 @@
 // import { FaEye, FaEyeSlash } from "react-icons/fa";
 
-import toast, { Toaster } from 'react-hot-toast';
 import regImg from '../../assets/register.png'
 import { useContext, useState } from "react";
 import { AuthContext } from './AuthProvider';
+import { toast } from 'react-toastify';
 
 export default function Register() {
   // const notify = () => toast("A new Blog has been added !");
@@ -23,6 +23,7 @@ export default function Register() {
 
     handleRegister(email, password)
     .then(res=>{
+       toast.success("Register is success!")
       console.log(res)
     })
     .catch(error => {
@@ -78,8 +79,7 @@ export default function Register() {
     </div>
   </div>
 </div>
-  </div>
-  <Toaster></Toaster>
+  </div> 
   </>
   )
 }

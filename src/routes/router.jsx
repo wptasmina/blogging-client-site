@@ -13,6 +13,9 @@ import LoginPage from './../Pages/AuthProvider/LoginPage';
 import Register from "../Pages/AuthProvider/Register";
 import BlogDetailsPage from "../Pages/BlogDetailsPage";
 import UpdateBlogePage from "../Pages/UpdateBlogePage";
+import PrivatRoute from "../PrivateRoute/PrivatRoute";
+import Comments from "../component/Comments";
+import WishList from "../component/WishList";
 
 
 export const router = createBrowserRouter([
@@ -31,26 +34,41 @@ export const router = createBrowserRouter([
           element: <AllBlogsPage />,
           loader: () => fetch('http://localhost:5000/blog')
         },
-        {
-          path: "/addblog",
-          element: <AddBlogPage />
-        },
+       {
+        path: "/addblog",
+        element:(
+          <PrivatRoute >
+            <AddBlogPage />
+          </PrivatRoute>
+        ),
+       },
         {
           path: "/wishlist",
-          element: <WishlistPage />,
-          loader: () => fetch('http://localhost:5000/blog')
+          element:<PrivatRoute>
+              <WishlistPage />
+            </PrivatRoute>,
+            loader: () => fetch('http://localhost:5000/wishlist')
+          // loader: () => fetch(`http://localhost:5000/wishlist/${params.id}`)
         },
         {
           path: "/featuredblogs",
           element: <FeaturedBlogs/>
         },
         {
-          path: "/details",
-          element: <BlogDetailsPage />
+          path: "/details/:id",
+          element: <BlogDetailsPage />,
+          loader: ({ params}) => fetch(`http://localhost:5000/details/${params.id}`)
+        },
+
+        {
+          path: "/updateBlog/:id",
+          element: <UpdateBlogePage />,
+          loader: ({ params}) => fetch(`http://localhost:5000/blog/${params.id}`)
         },
         {
-          path: "/updateBloge",
-          element: <UpdateBlogePage />
+          path: "/comments",
+          element: <Comments />,
+          loader: () => fetch(`http://localhost:5000/comments`)
         },
         {
           path: "/login",
