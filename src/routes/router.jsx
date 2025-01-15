@@ -45,11 +45,17 @@ export const router = createBrowserRouter([
         {
           path: "/wishlist",
           element:<PrivatRoute>
-              <WishlistPage />
+              <WishList />
             </PrivatRoute>,
-            loader: () => fetch('http://localhost:5000/wishlist')
-          // loader: () => fetch(`http://localhost:5000/wishlist/${params.id}`)
+        loader: () => fetch('http://localhost:5000/wishlist')
         },
+        // {
+        //   path: "/wishlistPage",
+        //   element:<PrivatRoute>
+        //       <WishlistPage />
+        //     </PrivatRoute>,
+        //   loader: () => fetch(`http://localhost:5000/wishlist/${params.id}`)
+        // },
         {
           path: "/featuredblogs",
           element: <FeaturedBlogs/>
@@ -59,7 +65,6 @@ export const router = createBrowserRouter([
           element: <BlogDetailsPage />,
           loader: ({ params}) => fetch(`http://localhost:5000/details/${params.id}`)
         },
-
         {
           path: "/updateBlog/:id",
           element: <UpdateBlogePage />,

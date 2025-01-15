@@ -1,18 +1,11 @@
 import React, { useContext } from 'react'
-// import { useState } from 'react';
-
 import AuthContext from './AuthProvider/AuthContext';
 import { toast } from 'react-toastify';
 
 
 export default function AddBlogPage() {
 
-
   const contextValue = useContext(AuthContext) 
-
-  // const [title, setTitle] = useState('');
-  // const [content, setContent] = useState('');
-  // const [successMessage, setSuccessMessage] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -146,13 +139,14 @@ export default function AddBlogPage() {
         </div>
           {/* Submit Button */}
           <div className="flex justify-center mt-8">
-            <button 
+            <input
             
               type="submit"
+              value="Add Blog"
               className="w-full py-3 bg-gray-800/90 text-white text-lg font-semibold rounded-lg focus:outline-none focus:bg-[#0EA64F]"
-            >
-              Add Blog
-            </button>
+            />
+              
+           
           </div>
         </form>
       </div>

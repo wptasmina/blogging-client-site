@@ -6,9 +6,25 @@ import { NavLink } from 'react-router-dom';
 export default function Blogs({ blog }) {
   const { userName, email, userImage, title, imageUrl, date, shortDesc, longDesc, category} = blog
 
-  // const hendleWishList =() =>{
-  // console.log( hendleWishList)
-  // }
+
+  const hendleWishList =() =>{
+
+    const newWishList= { userName, email, userImage, title }
+
+    fetch('http://localhost:5000/wishlist', {
+      method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(newWishList)
+    })
+    .then(res => res.json())
+    .then(data => {
+  
+      console.log(data)
+
+    })
+  }
 
  return (
 
@@ -50,7 +66,7 @@ export default function Blogs({ blog }) {
      </button>
     </NavLink>
      <NavLink to="/wishlist">
-       <button  className="btn bg-white text-black md:w-full hover:text-white btn-primary px-6">
+       <button onClick={hendleWishList} className="btn bg-white text-black md:w-full hover:text-white btn-primary px-6">
          <FaRegHeart />
          Wishlist
        </button>
