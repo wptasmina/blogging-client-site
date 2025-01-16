@@ -9,36 +9,12 @@ import {
 
 import auth from "../../Firebase/firebase.init";
 
-// import { FaSpinner } from "react-icons/fa";
-// import { toast, useToast } from "react-toastify";
-
 export const AuthContext = createContext()
 
 export default function AuthProvider({children}) {
 
   const [user, setUser] = useState(null)
   const [loading, setLoading] = useState(true);
-
-
-  // if (currentUser) {
-  //       setUser(currentUser);
-  //       if (currentUser?.email) {
-  //         const users = {
-  //           email: currentUser?.email,
-  //         };
-  //         // axios.post("http://localhost:5000/jwt", users, {
-  //         //   withCredentials: true,
-  //         // });
-  //       }
-  //       setLoading(false);
-  //     } else {
-  //       setUser(null);
-  //       setLoading(false);
-  //     }
-
-  // const [userPhoto, setUserPhoto] = useState(null);
-  // const [userName, setUserName] = useState(null);
-  // const [userEmail, setUserEmail] = useState(null);
 
   // Register
   const handleRegister = ( email, password ) =>{
@@ -83,15 +59,6 @@ export default function AuthProvider({children}) {
       unSubscribe();
     };
   }, []);
-
-  
-  // if (loading) {
-  //   return (
-  //     <div className="flex justify-center items-center h-screen">
-  //       <FaSpinner className="animate-spin text-3xl" />
-  //     </div>
-  //   );
-  // }
 
 
   const authInfo = {

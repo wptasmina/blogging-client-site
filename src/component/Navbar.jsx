@@ -1,8 +1,7 @@
-import { NavLink } from 'react-router-dom';
-import logo from '../assets/logo-gl.png';
-import Profile from './Profile';
-import { useContext } from 'react';
-import { AuthContext } from '../Pages/AuthProvider/AuthProvider';
+import { Link, NavLink } from "react-router-dom";
+import logo from "../assets/logo-gl.png";
+import { useContext } from "react";
+import { AuthContext } from "../Pages/AuthProvider/AuthProvider";
 
 export default function Navbar() {
   const { user, signOutUser } = useContext(AuthContext);
@@ -100,16 +99,45 @@ export default function Navbar() {
 
         <div className="navbar-end">
           {user ? (
-            <button onClick={handleSignOut} className="flex items-center gap-2">
-              <Profile />
-              <span className="text-white text-md font-medium rounded-md px-4 py-1 border-2 border-gray-800 ml-2">Logout</span>
-            </button>
-          ) : (
-            <NavLink to="/login">
-              <button className="text-white text-md font-medium px-6 py-1 border-2
-               border-gray-800 focus:bg-gray-700 focus:border-gray-700 rounded-md bg-gray-800">
-                Login
+            <div className="dropdown dropdown-end">
+              <button
+                tabIndex={0}
+                className="btn btn-ghost btn-circle avatar"
+                aria-label="User Menu"
+              >
+                <div className="w-10 rounded-full">
+                  <img
+                    alt="User Avatar"
+                    src={user?.photoURL }
+                  />
+                </div>
               </button>
+              <ul
+                tabIndex={0}
+                className="menu menu-sm dropdown-content bg-base-100 rounded-sm w-52 p-2 gap-1"
+              >
+                <li className="btn btn-xs rounded-sm border-none">
+                  {user.displayName}
+                </li>
+                <li className="btn btn-xs rounded-sm border-none">
+                  {user.email}
+                </li>
+                <li>
+                  <Link
+                    onClick={handleSignOut}
+                    className="bg-red-600 btn pb-3 btn-xs border-none w-full text-white hover:bg-red-700 rounded-sm"
+                  >
+                    Logout
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          ) : (
+            <NavLink
+              to="/login"
+              className="btn bg-indigo-600 rounded-sm transition-all duration-300 hover:bg-indigo-500 text-white btn-sm border-none"
+            >
+              Join Now
             </NavLink>
           )}
         </div>

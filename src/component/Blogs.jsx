@@ -1,11 +1,12 @@
 
 import { FaRegHeart } from 'react-icons/fa'
 import { TbListDetails } from 'react-icons/tb'
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 export default function Blogs({ blog }) {
   const { userName, email, userImage, title, imageUrl, date, shortDesc, longDesc, category} = blog
 
+  const navigate = useNavigate()
 
   const hendleWishList =() =>{
 
@@ -20,7 +21,8 @@ export default function Blogs({ blog }) {
     })
     .then(res => res.json())
     .then(data => {
-  
+
+      navigate('/wishlist')
       console.log(data)
 
     })
@@ -30,6 +32,7 @@ export default function Blogs({ blog }) {
 
  <> 
 {/* <div className="border-red-400"> */}
+
 <div className="card card-compact border bg-white shadow-xl">
 
 <div className='flex flex-row items-center py-2 pl-2 gap-2'>
@@ -58,19 +61,18 @@ export default function Blogs({ blog }) {
    </div>
    <p className='font-normal'>{shortDesc}...see Moer</p>
    {/* <p className='text-gray-600 text-md font-normal'>{longDesc}</p> */}
-   <div className="card-actions justify-center pt-4">
+   <div className="card-actions flex justify-center pt-4">
     <NavLink to={`/details/${blog._id}`}>
-     <button className="btn bg-white text-black md:w-full hover:text-white btn-primary px-7">
+     <button className="btn bg-white text-black hover:text-white btn-primary px-7">
        <TbListDetails />
        Details
      </button>
     </NavLink>
-     <NavLink to="/wishlist">
-       <button onClick={hendleWishList} className="btn bg-white text-black md:w-full hover:text-white btn-primary px-6">
+
+       <button onClick={hendleWishList} className="btn bg-white text-black  hover:text-white btn-primary px-7">
          <FaRegHeart />
          Wishlist
        </button>
-     </NavLink>
    </div>
  </div>
 </div>

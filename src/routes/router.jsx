@@ -7,7 +7,6 @@ import HomePage from "../Pages/HomePage";
 import ErrorPage from "../Pages/ErrorPage";
 import AllBlogsPage from "../Pages/AllBlogsPage";
 import AddBlogPage from "../Pages/AddBlogPage";
-import WishlistPage from './../Pages/WishlistPage';
 import FeaturedBlogs from "../Pages/FeaturedBlogs";
 import LoginPage from './../Pages/AuthProvider/LoginPage';
 import Register from "../Pages/AuthProvider/Register";

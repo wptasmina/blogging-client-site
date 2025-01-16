@@ -1,32 +1,24 @@
 import { useLoaderData } from "react-router-dom";
 import Banner from "../component/Banner";
 import Newsletter from "../component/Newsletter";
-import TabCatagory from "../component/TabCatagory";
 import Blogs from "../component/Blogs";
+import FAQs from "../component/FAQs";
+import MarqueeSlice from "./MarqueeSlice";
 
 
 
 export default function HomePage() {
   const blogs = useLoaderData()
 
-  // console.log(blogs)
-
-
   return (
     <>
     <Banner></Banner>
-    <TabCatagory />
- 
-    {/*Home Blog card  */}
-    {/* <h1>blog: {blogs.length}</h1>
-    <div className="md:w-11/12 mx-auto p-0 px-2 md:px-0 grid lg:grid-cols-4 md:grid-cols-3 
-    sm:grid-cols-2 grid-cols-1 gap-4 mb-10">
-      {
-        blogs.map(blog => <Blogs key={blog._id} blog={blog} />)
-      }
-    </div> */}
 
-    <h1>blog: {blogs.length}</h1>
+  
+    <h1 className='text-3xl text-black font-extrabold text-center my-10'>
+      Tech Trends to Watch in {new Date().getFullYear()}
+    </h1>
+    {/* <h1>blog: {blogs.length}</h1> */}
     <div className="md:w-11/12 mx-auto p-0 px-2 md:px-0 grid lg:grid-cols-4 md:grid-cols-3 
     sm:grid-cols-2 grid-cols-1 gap-4 mb-10">
       {Array.isArray(blogs) && blogs.length > 0 ? (
@@ -37,6 +29,8 @@ export default function HomePage() {
     </div>
   
     <Newsletter />
+    <MarqueeSlice/>
+    <FAQs/>
     </>
   )
 }

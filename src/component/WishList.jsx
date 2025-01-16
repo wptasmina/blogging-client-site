@@ -8,26 +8,10 @@ export default function WishList() {
   console.log(wishLists)
   const { user } = useContext(AuthContext);
 
-  // const [wishLists, setWishLists] = useState(wishLists); 
   const navigate = useNavigate();
 
-  // const handleRemoveWishlist = (blogId) => {
-  //   fetch(`http://localhost:5000/wishlist/${user?.id}/${blogId}`, {
-  //     method: "DELETE",
-  //   })
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       if (data.success) {
-  //         // Update the local state after removing the blog
-  //         setWishLists((prevWishLists) => prevWishLists.filter((item) => item._id !== blogId));
-  //       } else {
-  //         console.error("Failed to remove blog from wishlist.");
-  //       }
-  //     })
-  //     .catch((err) => console.error("Error removing blog:", err));
-  // };
-
   return (
+    
     <div className="bg-white md:w-11/12 mx-auto my-10">
       <div className="bg-white flex flex-col justify-center items-center">
         <h2 className="text-3xl text-gray-800 text-center font-extrabold">Your Personalized Wish List</h2>
