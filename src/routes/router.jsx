@@ -7,7 +7,6 @@ import HomePage from "../Pages/HomePage";
 import ErrorPage from "../Pages/ErrorPage";
 import AllBlogsPage from "../Pages/AllBlogsPage";
 import AddBlogPage from "../Pages/AddBlogPage";
-import FeaturedBlogs from "../Pages/FeaturedBlogs";
 import LoginPage from './../Pages/AuthProvider/LoginPage';
 import Register from "../Pages/AuthProvider/Register";
 import BlogDetailsPage from "../Pages/BlogDetailsPage";
@@ -15,6 +14,7 @@ import UpdateBlogePage from "../Pages/UpdateBlogePage";
 import PrivatRoute from "../PrivateRoute/PrivatRoute";
 import Comments from "../component/Comments";
 import WishList from "../component/WishList";
+import Featured from "../Pages/Featured";
 
 
 export const router = createBrowserRouter([
@@ -48,16 +48,9 @@ export const router = createBrowserRouter([
             </PrivatRoute>,
         loader: () => fetch('http://localhost:5000/wishlist')
         },
-        // {
-        //   path: "/wishlistPage",
-        //   element:<PrivatRoute>
-        //       <WishlistPage />
-        //     </PrivatRoute>,
-        //   loader: () => fetch(`http://localhost:5000/wishlist/${params.id}`)
-        // },
         {
           path: "/featuredblogs",
-          element: <FeaturedBlogs/>
+          element: <Featured/>
         },
         {
           path: "/details/:id",

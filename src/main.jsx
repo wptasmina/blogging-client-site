@@ -12,6 +12,9 @@ import {
 
 import AuthProvider from './Pages/AuthProvider/AuthProvider';
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

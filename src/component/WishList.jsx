@@ -2,13 +2,39 @@ import React, { useContext, useState } from "react";
 import { RiDeleteBin5Fill } from "react-icons/ri";
 import { AuthContext } from "../Pages/AuthProvider/AuthProvider";
 import { useLoaderData, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+
 
 export default function WishList() {
-  const wishLists = useLoaderData(); 
-  console.log(wishLists)
+
+  
   const { user } = useContext(AuthContext);
 
   const navigate = useNavigate();
+
+  const [wishLists, setWishLists] = useState(useLoaderData());
+
+  const hendleDelete = (id) => {
+    fetch(`http://localhost:5000/deleteBlog/${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.deletedCount > 0) {
+          const remainingItems = wishLists.filter((item) => item._id !== id);
+          setWishLists(remainingItems);
+          toast.success("Item successfully deleted!");
+        } else {
+          toast.error("Failed to delete the item. Please try again.");
+        }
+      })
+      .catch((error) => {
+        console.error("Error deleting item:", error);
+        toast.error("An error occurred. Please try again!.");
+      });
+  };
+
+
 
   return (
     
@@ -54,7 +80,7 @@ export default function WishList() {
                   <td>
                     <div className="flex justify-center items-center gap-1">
                       {/* Remove Button */}
-                      <button onClick={() => handleRemoveWishlist(item._id)}>
+                      <button onClick={() => hendleDelete(item._id)}>
                         <RiDeleteBin5Fill className="text-xl text-red-500 cursor-pointer hover:text-red-600" />
                       </button>
                       {/* Details Button */}

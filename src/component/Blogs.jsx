@@ -23,17 +23,16 @@ export default function Blogs({ blog }) {
     .then(data => {
 
       navigate('/wishlist')
-      console.log(data)
 
     })
   }
 
- return (
 
+ return (
  <> 
 {/* <div className="border-red-400"> */}
 
-<div className="card card-compact border bg-white shadow-xl">
+<div data-aos="fade-up-left" className="card card-compact border bg-white shadow-xl">
 
 <div className='flex flex-row items-center py-2 pl-2 gap-2'>
    <img src={userImage} className='w-12 h-12 object-cover rounded-full shadow border border-blue-300 p-1' alt="author image" />
