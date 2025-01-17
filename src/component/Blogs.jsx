@@ -12,7 +12,7 @@ export default function Blogs({ blog }) {
 
     const newWishList= { userName, email, userImage, title }
 
-    fetch('http://localhost:5000/wishlist', {
+    fetch('https://blogging-server-alpha.vercel.app/wishlist', {
       method: 'POST',
         headers: {
           'Content-Type': 'application/json',

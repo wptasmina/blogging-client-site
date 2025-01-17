@@ -1,6 +1,6 @@
 # Blog Website
 
-Welcome to the **Blog Website**, a platform to share, explore, and engage with blogs. This website is built using modern web development tools like React and Firebase, ensuring a smooth, responsive, and secure user experience. Follow the guide below to set up, explore, and understand the features of the project.
+Welcome to the **Galaxy Blogger**, a platform to share, explore, and engage with blogs. This website is built using modern web development tools like React and Firebase, ensuring a smooth, responsive, and secure user experience. Follow the guide below to set up, explore, and understand the features of the project.
 
 ---
 
@@ -17,7 +17,7 @@ The purpose of this project is to create a functional, dynamic, and visually app
 
 ## Live URL
 
-Access the live project here: **[Live Site Link](#)**
+Access the live project here: **[https://thriving-melomakarona-dcc8b4.netlify.app](#)**
 
 ---
 
@@ -59,11 +59,4 @@ Access the live project here: **[Live Site Link](#)**
 - **Deployment**: Netlify (frontend), Vercel (backend)
 - **Styling**: Custom CSS and Material-UI
 
----
-
-## Installation Guide
-
-1. Clone the repository:
-   ```bash
-   git clone <repository-url>
-   cd blogging-client-site
+----

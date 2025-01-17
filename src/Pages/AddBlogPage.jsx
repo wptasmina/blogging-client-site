@@ -26,7 +26,7 @@ export default function AddBlogPage() {
      date, category, shortDesc, longDesc }
 
   // send data to the server
-  fetch('http://localhost:5000/blogger', {
+  fetch('https://blogging-server-alpha.vercel.app/blogger', {
     method: 'POST',
       headers: {
         'Content-Type': 'application/json',

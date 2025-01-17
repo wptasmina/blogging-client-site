@@ -9,7 +9,7 @@ const Featured = () => {
   const [topPosts, setTopPosts] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/blog")
+    axios.get("https://blogging-server-alpha.vercel.app/blog")
     .then((res) => {
     const blogs = res.data;
 

@@ -26,12 +26,12 @@ export const router = createBrowserRouter([
         {
           path: "/",
           element: <HomePage />,
-          loader: () => fetch('http://localhost:5000/homeblog')
+          loader: () => fetch('https://blogging-server-alpha.vercel.app/homeblog')
         },
         {
           path: "/allblogs",
           element: <AllBlogsPage />,
-          loader: () => fetch('http://localhost:5000/blog')
+          loader: () => fetch('https://blogging-server-alpha.vercel.app/blog')
         },
        {
         path: "/addblog",
@@ -46,7 +46,7 @@ export const router = createBrowserRouter([
           element:<PrivatRoute>
               <WishList />
             </PrivatRoute>,
-        loader: () => fetch('http://localhost:5000/wishlist')
+        loader: () => fetch('https://blogging-server-alpha.vercel.app/wishlist')
         },
         {
           path: "/featuredblogs",
@@ -55,17 +55,17 @@ export const router = createBrowserRouter([
         {
           path: "/details/:id",
           element: <BlogDetailsPage />,
-          loader: ({ params}) => fetch(`http://localhost:5000/details/${params.id}`)
+          loader: ({ params}) => fetch(`https://blogging-server-alpha.vercel.app/details/${params.id}`)
         },
         {
           path: "/updateBlog/:id",
           element: <UpdateBlogePage />,
-          loader: ({ params}) => fetch(`http://localhost:5000/blog/${params.id}`)
+          loader: ({ params}) => fetch(`https://blogging-server-alpha.vercel.app/blog/${params.id}`)
         },
         {
           path: "/comments",
           element: <Comments />,
-          loader: () => fetch(`http://localhost:5000/comments`)
+          loader: () => fetch(`https://blogging-server-alpha.vercel.app/comments`)
         },
         {
           path: "/login",

@@ -31,7 +31,7 @@ export default function UpdateBlogePage() {
 
     // console.log(_id)
     
-  fetch(`http://localhost:5000/blog/${_id}`, {
+  fetch(`https://blogging-server-alpha.vercel.app/blog/${_id}`, {
     method: "PUT",
     headers: {
       'content-type': "application/json"
