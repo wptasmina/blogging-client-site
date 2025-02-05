@@ -17,7 +17,7 @@ The purpose of this project is to create a functional, dynamic, and visually app
 
 ## Live URL
 
-Access the live project here: **[https://thriving-melomakarona-dcc8b4.netlify.app](#)**
+Access the live project here: **[(https://galaxy-blogger.netlify.app/)](#)**
 
 ---
 
