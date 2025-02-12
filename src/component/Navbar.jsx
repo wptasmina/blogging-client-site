@@ -17,14 +17,14 @@ export default function Navbar() {
   };
 
   return (
-    <div className="sticky top-0 z-50 w-full bg-gray-800/90 backdrop:blur-lg">
+    <div className="sticky top-0 z-50 w-full bg-gradient-to-r from-[#003E6F] via-purple-500 to-black backdrop:blur-lg">
       <div className="navbar p-0 w-11/12 mx-auto">
         <div className="navbar-start p-0">
-          <div className="dropdown">
+          <div className="dropdown  ">
             <div
               tabIndex={0}
               role="button"
-              className="btn-ghost hover:bg-slate-400 bg-white p-1 rounded-lg mr-1 lg:hidden"
+              className="btn-ghost hover:bg-slate-400 bg-white p-1 rounded-lg mr-1 md:hidden "
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -45,23 +45,23 @@ export default function Navbar() {
               tabIndex={0}
               className="menu menu-sm dropdown-content bg-gray-800 rounded-box z-[1] mt-2 w-60 p-2 py-10 gap-4 shadow"
             >
-              <li className="text-white bg-gray-800 text-xl font-bold">
+              <li className="text-white text-xl font-bold">
                 <NavLink to="/">Home</NavLink>
               </li>
               {user && (
                 <>
-                  <li className="text-white bg-gray-800 text-xl font-bold">
+                  <li className="text-white text-xl font-bold">
                     <NavLink to="/addblog">Add Blogs</NavLink>
                   </li>
-                  <li className="text-white bg-gray-800 text-xl font-bold">
+                  <li className="text-white  text-xl font-bold">
                     <NavLink to="/wishlist">Wishlist</NavLink>
                   </li>
                 </>
               )}
-              <li className="text-white bg-gray-800 text-xl font-bold">
+              <li className="text-white text-xl font-bold">
                 <NavLink to="/allblogs">All Blogs</NavLink>
               </li>
-              <li className="text-white bg-gray-800 text-xl font-bold">
+              <li className="text-white text-xl font-bold">
                 <NavLink to="/featuredblogs">Featured Blogs</NavLink>
               </li>
             </ul>
@@ -73,25 +73,29 @@ export default function Navbar() {
           </NavLink>
         </div>
 
-        <div className="navbar-center hidden lg:flex">
+        <div className="navbar-center hidden md:flex">
           <ul className="menu menu-horizontal px-1 gap-4">
-            <li className="text-white bg-gray-800 text-md font-medium rounded-md">
+            <li className="text-white  text-md font-medium rounded-md">
               <NavLink to="/">Home</NavLink>
+            </li>
+            <li className="text-white text-md font-medium rounded-md">
+              <NavLink to="/about">About</NavLink>
             </li>
             {user && (
               <>
-                <li className="text-white bg-gray-800 text-md font-medium rounded-md">
+                <li className="text-white text-md font-medium rounded-md">
                   <NavLink to="/addblog">Add Blogs</NavLink>
                 </li>
-                <li className="text-white bg-gray-800 text-md font-medium rounded-md">
+                <li className="text-white text-md font-medium rounded-md">
                   <NavLink to="/wishlist">Wishlist</NavLink>
                 </li>
               </>
             )}
-            <li className="text-white bg-gray-800 text-md font-medium rounded-md">
+            
+            <li className="text-white text-md font-medium rounded-md">
               <NavLink to="/allblogs">All Blogs</NavLink>
             </li>
-            <li className="text-white bg-gray-800 text-md font-medium rounded-md">
+            <li className="text-white text-md font-medium rounded-md">
               <NavLink to="/featuredblogs">Featured Blogs</NavLink>
             </li>
           </ul>
@@ -125,7 +129,7 @@ export default function Navbar() {
                 <li>
                   <Link
                     onClick={handleSignOut}
-                    className="bg-red-600 btn pb-3 btn-xs border-none w-full text-white hover:bg-red-700 rounded-sm"
+                    className=" btn pb-3 btn-xs border-none w-full text-white hover:bg-purple-700 rounded-sm"
                   >
                     Logout
                   </Link>
@@ -135,9 +139,10 @@ export default function Navbar() {
           ) : (
             <NavLink
               to="/login"
-              className="btn bg-indigo-600 rounded-sm transition-all duration-300 hover:bg-indigo-500 text-white btn-sm border-none"
+              className=" px-6 py-2 rounded-lg bg-gradient-to-r from-indigo-600 via-purple-600
+               to-[#313030] duration-300 hover:bg-indigo-500 text-white border-none"
             >
-              Join Now
+              Login
             </NavLink>
           )}
         </div>

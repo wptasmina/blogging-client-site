@@ -15,6 +15,7 @@ import PrivatRoute from "../PrivateRoute/PrivatRoute";
 import Comments from "../component/Comments";
 import WishList from "../component/WishList";
 import Featured from "../Pages/Featured";
+import About from './../Pages/About';
 
 
 export const router = createBrowserRouter([
@@ -27,6 +28,11 @@ export const router = createBrowserRouter([
           path: "/",
           element: <HomePage />,
           loader: () => fetch('https://blogging-server-alpha.vercel.app/homeblog')
+        },
+        {
+          path: "/about",
+          element: <About />,
+          // loader: () => fetch('https://blogging-server-alpha.vercel.app/homeblog')
         },
         {
           path: "/allblogs",

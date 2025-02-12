@@ -10,7 +10,8 @@ export default {
         'Roboto': ['"Roboto Condensed", serif']
       },
       backgroundImage: {
-        bannerImg:  "url('/banner.jpg')",
+        bannerImg:  "url('/banner.png')",
+        blogImg:  "url('/blog-1.png')",
       },
     },
   },

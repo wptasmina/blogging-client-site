@@ -28,31 +28,34 @@ export default function Blogs({ blog }) {
   }
 
 
- return (
- <> 
-{/* <div className="border-red-400"> */}
-
-<div data-aos="fade-up-left" className="card card-compact border bg-white shadow-xl">
-
-<div className='flex flex-row items-center py-2 pl-2 gap-2'>
+return (
+<> 
+<div data-aos="fade-up"
+     data-aos-duration="3000" className="card bg-base-100 p-4 border shadow-xl">
+  {/* user name and image  */}
+  <div className='flex flex-row items-center pb-2 gap-2'>
    <img src={userImage} className='w-12 h-12 object-cover rounded-full shadow border border-blue-300 p-1' alt="author image" />
    <div>
-     <h4 className="text-md font-bold text-blue-500">Author: {userName} </h4>
-     <p className="text-xs font-bold text-gray-500">Email: {email} </p>
+     <h4 className="text-md font-bold text-indigo-800">{userName} </h4>
+     <p className="text-xs font-bold text-gray-500">{email} </p>
    </div>
  </div>
- <figure>
+
+ {/* card larg image  */}
+<figure>
    <img
      className="w-full h-[200px] object-cover rounded-t-lg"
      src={imageUrl}
      alt="Product image"
    />
  </figure>
- <div className="card-body">
+
+  
+ <div className=" space-y-4">
    <h2 className="card-title text-2xl text-gray-800 font-bold">{title}</h2>
    <div className='flex justify-between items-center'>
      <div>
-       <p className='text-md text-green-600 font-bold'>{category}</p>
+       <p className='text-md text-indigo-800 font-bold'>{category}</p>
      </div>
     <div>
       <p className='font-medium text-gray-900'>{date}</p>
@@ -60,22 +63,24 @@ export default function Blogs({ blog }) {
    </div>
    <p className='font-normal'>{shortDesc}...see Moer</p>
    {/* <p className='text-gray-600 text-md font-normal'>{longDesc}</p> */}
-   <div className="card-actions flex justify-center pt-4">
+
+   <div className="card-actions flex justify-center md:gap-2 gap-4 pt-4">
     <NavLink to={`/details/${blog._id}`}>
-     <button className="btn bg-white text-black hover:text-white btn-primary px-7">
+     <button className="btn bg-white text-white/70 text-white bg-gradient-to-r from-indigo-800 via-purple-600 to-[#2b2a2a] px-4">
        <TbListDetails />
        Details
      </button>
     </NavLink>
 
-       <button onClick={hendleWishList} className="btn bg-white text-black  hover:text-white btn-primary px-7">
-         <FaRegHeart />
-         Wishlist
-       </button>
+    <button onClick={hendleWishList} className="btn bg-white text-white/70 bg-gradient-to-r from-indigo-800 via-purple-600 to-[#2b2a2a] px-4">
+      <FaRegHeart />
+      Wishlist
+    </button>
    </div>
  </div>
+
 </div>
-{/* </div> */}
+
 </> 
 
 

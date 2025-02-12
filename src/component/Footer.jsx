@@ -1,78 +1,115 @@
-import { NavLink } from "react-router-dom"
+import React, { useState } from 'react';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import logo from "../assets/logo-gl.png"
+
 import { FaSquareFacebook,FaInstagram, FaXTwitter, FaYoutube } from "react-icons/fa6"
+import { Link, NavLink } from 'react-router-dom';
+import { FaLinkedinIn } from 'react-icons/fa';
 
 export default function Footer() {
-  return (
-    <div className=' bg-base-200 '>
-    <footer className="footer text-base-content px-2 py-10 md:p-10 w-11/12 mx-auto">
-    <nav>
-      <h6 className="footer-title">Quick Link</h6>
-      <a className="link link-hover">Home</a>
-      <a className="link link-hover">Add Blogs</a>
-      <a className="link link-hover">Dashbord</a>
-      <a className="link link-hover">Contact</a>
-    </nav>
-    <nav>
-      <h6 className="footer-title">Categories</h6>
-      <NavLink className="link link-hover">
-      Developer Platform</NavLink>
-      <a className="link link-hover">Jobs
-      </a>
-      <a className="link link-hover">Enterprise</a>
-      <a className="link link-hover">FAQs</a>
-      <a className="link link-hover">Help & Center</a>
-    </nav>
-    
-    <nav>
-      <h6 className="footer-title">Legal</h6>
-      <a className="link link-hover">Terms of Condition</a>
-      <a className="link link-hover">Privacy policy</a>
-      <a className="link link-hover">Cookie policy</a>
-    </nav>
-    <form>
-      <h6 className="footer-title">News letter</h6>
-      <fieldset className="form-control w-80">
-        <label className="label">
-          <span>Enter your email address</span>
-        </label>
-        <div className="join">
-          <input
-            type="text"
-            placeholder="username@site.com"
-            className="input input-bordered join-item focus:outline-none" />
-          <button className="bg-blue-500 text-white font-normal join-item px-3">Subscribe</button>
-        </div>
-      </fieldset>
-    </form>
-  </footer>
+    const [email, setEmail] = useState('');
   
-  <div  className="footer bg-[#EDF2FA]">
-  <footer className="footer w-11/12 mx-auto text-base-content border-base-300 border-t px-10 py-4">
-  <aside className="grid-flow-col justify-center items-center">
-    <img src={logo} className='w-20' />
-    <p className='text-center'>Copyright © {new Date().getFullYear()} - All right reserved</p>
-  </aside>
-  <nav className="md:place-self-center md:justify-self-end">
-    <div className="grid grid-flow-col gap-4">
-    <p  className="flex justify-center items-center text-gray-500 font-medium">Follow Us:</p>
+    const handleSubmit = (e) => {
+      e.preventDefault(); // Prevent page reload
+      if (email.trim() === '') {
+        toast.error('Please enter a valid email address!');
+      } else {
+        toast.success('Thank you for subscribing to our newsletter!');
+        setEmail(''); // Clear the input field
+      }
+    };
+
+  return (
+<div className=' bg-blogImg bg-bottom'>
+<footer class="text-gray-600 body-font">
+  <div class="w-11/12 mx-auto pt-10">
+    <div class="flex flex-wrap md:text-left text-center order-first">
+
+      <div class="lg:w-1/4 md:w-1/2 w-full ">
+        <Link to='/' className="flex flex-col md:justify-start md:items-start justify-center items-center">
+        <img src={logo} className='w-28' />
+          <span class="ml-3 text-gray-500 text-xl font-bold mb-10">Galaxy Blogger</span>
+        </Link>
+      </div>
+
+      <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+        <h2 class="title-font font-bold text-gray-700 tracking-widest text-sm mb-3">COMPANY</h2>
+        <nav class="list-none mb-10">
+          <li>
+            <a class="text-gray-600 hover:text-gray-800">About</a>
+          </li>
+          <li>
+            <a class="text-gray-600 hover:text-gray-800">Blog</a>
+          </li>
+          <li>
+            <a class="text-gray-600 hover:text-gray-800">Jobe</a>
+          </li>
+          <li>
+            <a class="text-gray-600 hover:text-gray-800">FAQ</a>
+          </li>
+        </nav>
+      </div>
+      <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+        <h2 class="title-font font-bold text-gray-700 tracking-widest text-sm mb-3">HELP & SUPPORT</h2>
+        <nav class="list-none mb-10">
+          <li>
+            <a class="text-gray-600 hover:text-gray-800">Login</a>
+          </li>
+          <li>
+            <a class="text-gray-600 hover:text-gray-800">Contact & Support</a>
+          </li>
+          <li>
+            <a class="text-gray-600 hover:text-gray-800">VIP Priority Support</a>
+          </li>
+          <li>
+            <a class="text-gray-600 hover:text-gray-800">Plan Comparison</a>
+          </li>
+        </nav>
+      </div>
+
+       <div class="lg:w-1/4 md:w-1/2 w-full ">
+        <h2 class="title-font text-gray-700 font-bold tracking-widest text-sm mb-3">LEGAL</h2>
+        <nav class="list-none mb-10">
+          <li>
+            <a class="text-gray-600 hover:text-gray-800">First Link</a>
+          </li>
+          <li>
+            <a class="text-gray-600 hover:text-gray-800">Support Policy</a>
+          </li>
+          <li>
+            <a class="text-gray-600 hover:text-gray-800">Privacy Policy</a>
+          </li>
+        </nav>
+      </div>
+
+    </div>
+  </div>
+  
+  <div class="border-t border-gray-400 w-11/12 mx-auto">
+    <div class="py-6 mx-auto flex items-center sm:flex-row flex-col">
      
-      <NavLink to="https://www.youtube.com">
-        <FaYoutube className="text-3xl text-[#E81123] " />
-      </NavLink>
-      <NavLink to="https://www.instagram.com">
-        <FaInstagram className="text-2xl text-red-700" />
-      </NavLink>
-      <NavLink to="https://www.twitter.com">
-        <FaXTwitter className="text-2xl text-black" />
-      </NavLink>
-      <NavLink to="https://www.facebook.com">
+      <p className="text-sm text-gray-500 sm:mt-0 mt-4">Copyright © {new Date().getFullYear()} All Right reserved  —
+        <a href="https://twitter.com/knyttneve" rel="noopener noreferrer" class="text-gray-600 ml-1" target="_blank">@Galaxy Blogger</a>
+      </p>
+      <span className="inline-flex gap-4 sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+        <NavLink to="https://www.facebook.com/wptasmina">
         <FaSquareFacebook className="text-2xl text-blue-600" />
       </NavLink>
+      <NavLink to="https://www.twitter.com/wptasmina">
+        <FaXTwitter className="text-2xl text-black" />
+      </NavLink>
+      <NavLink to="https://www.instagram.com/wptasmina">
+        <FaInstagram className="text-2xl text-red-500" />
+      </NavLink>
+      <NavLink to="https://www.linkedin.com/in/wptasmina">
+        <FaLinkedinIn className="text-2xl text-blue-500" />
+      </NavLink>
+      </span>
     </div>
-  </nav>
-</footer>
   </div>
+
+</footer>
   </div>
   )
 }
