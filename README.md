@@ -1,7 +1,8 @@
 # Blog Website
 
 
-![Blog_website](https://github.com/user-attachments/assets/9ab82a50-b523-41fb-be8f-79622c60f163)
+![Galaxy_Bloger_Img](https://github.com/user-attachments/assets/f5cb88f6-2954-4cbb-8223-e46e8af51f76)
+
 
 Welcome to the **Galaxy Blogger**, a platform to share, explore, and engage with blogs. This website is built using modern web development tools like React and Firebase, ensuring a smooth, responsive, and secure user experience. Follow the guide below to set up, explore, and understand the features of the project.
 
