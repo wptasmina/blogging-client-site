@@ -52,12 +52,12 @@ export default function LoginPage() {
       <div className="bg-[#EDF2FA]">
         <div className="hero min-h-screen w-11/12 mx-auto">
           <div className="hero-content p-0 flex-col sm:my-10 my-4 md:flex-row-reverse">
-            <div className="text-center lg:text-left">
-              <h1 className="md:text-4xl text-2xl font-bold text-center">Login now!</h1>
-              <img src={loginImg} className="sm:w-full w-40 md:my-6" alt="image" />
+            <div className="text-center lg:text-left hidden md:block">
+              <img src={loginImg} className="w-96 h-72 md:my-6" alt="image" />
             </div>
 
             <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-md">
+              <h1 className="md:text-3xl text-2xl font-bold text-center pt-4">Login now!</h1>
               <form onSubmit={handleSignIn} className="card-body">
                 <div className="form-control">
                   <label className="label">
@@ -67,7 +67,7 @@ export default function LoginPage() {
                     type="email"
                     placeholder="email"
                     name="email"
-                    className="input input-bordered focus:outline-none focus:border-blue-300"
+                    className="input input-bordered focus:outline-none focus:border-[#5c89c4]"
                     required
                   />
                 </div>
@@ -79,36 +79,33 @@ export default function LoginPage() {
                     type="password"
                     placeholder="password"
                     name="password"
-                    className="input input-bordered focus:outline-none focus:border-blue-300"
+                    className="input input-bordered focus:outline-none focus:border-[#5c89c4]"
                     required
                   />
-                  <label className="label">
-                    <a href="#" className="label-text-alt link link-hover font-medium text-[#1B66C9]">
-                      Forgot password?
-                    </a>
-                  </label>
                 </div>
                 <div className="form-control mt-6">
                   <input
                     type="submit"
                     value="Login"
-                    className="btn bg-blue-500 border-0 text-white text-lg hover:bg-blue-500 btn-primary"
+                    className="btn bg-[#1d4372] border-0 text-white text-lg hover:bg-blue-500 btn-primary"
                   />
                 </div>
 
                 <div className="divider">OR</div>
 
                 <div
-                  className="flex justify-start border gap-8 py-2 rounded-full hover:bg-[#EDF2FA]"
+                  className="flex justify-center md:justify-start items-center gap-2 border md:gap-8 py-2 rounded-full hover:bg-[#EDF2FA]"
                   onClick={handleGoogleSignIn}
                 >
-                  <img src={gImg} className="w-6 ml-4" alt="Google" />
+                  <img src={gImg} className="md:w-6 w-4 ml-4" alt="Google" />
+                 <div> 
                   <h4 className="w-full font-medium cursor-pointer">Continue with Google</h4>
+                 </div>
                 </div>
-                <p className="text-md text-center">
-                  New to the Website? Please{" "}
+                <p className="text-md text-center pt-2">
+                  New to the Website? Please 
                   <NavLink to="/register">
-                    <span className="text-[#1B66C9] font-medium">Register</span>
+                    <span className="text-[#1d4372] font-medium"> Register</span>
                   </NavLink>
                 </p>
               </form>

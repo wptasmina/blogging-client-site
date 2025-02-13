@@ -8,7 +8,7 @@ const PrivatRoute = ({ children }) => {
 
   // Show a loading indicator while checking authentication
   if (loading) {
-    return <div className="text-center text-xl font-semibold">Loading...</div>;
+    return <div className="text-center mt-20 text-xl font-semibold">Loading...</div>;
   }
 
   // Redirect to login page if user is not authenticated

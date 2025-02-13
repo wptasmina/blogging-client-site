@@ -65,7 +65,7 @@ export default function BlogDetailsPage() {
 
   return (
     <div className="bg-white md:w-11/12 mx-auto">
-      <div className="card bg-gradient-to-r from-indigo-50 md:w-2/3 mx-auto md:p-6 py-6 px-4 my-8 shadow">
+      <div className="card bg-gradient-to-r from-indigo-50 md:w-2/3 mx-auto md:p-10 py-6 px-4 my-8 shadow">
         
         {/* Blog Header */}
         <div className="card-body flex-row justify-between items-center gap-4 p-0 mb-4">
@@ -73,26 +73,26 @@ export default function BlogDetailsPage() {
           <div className="flex flex-row items-center gap-2">
             <img
               src={userImage || 'https://via.placeholder.com/150'}
-              className="w-12 h-12 object-cover rounded-full shadow border border-blue-300 p-1"
+              className="w-12 h-12 object-cover rounded-full shadow border border-[#003f6fbb] p-1"
               alt="Author"
             />
             <div>
-              <h2 className="text-md font-bold text-blue-500">{userName}</h2>
-              <p className="text-xs font-bold text-gray-500">Email: {email}</p>
+              <h2 className="text-sm font-bold text-[#003f6fbb]">Athor: {userName}</h2>
+              <p className="text-xs font-bold text-gray-500">{email}</p>
             </div>
           </div>
           
           {/* Edit button only for the blog owner */}
           {isOwner && (
             <NavLink to={`/updateBlog/${_id}`}>
-              <FaPenToSquare className="text-2xl text-blue-500 shadow cursor-pointer" />
+              <FaPenToSquare className="text-2xl text-[#003f6fbb] shadow cursor-pointer" />
             </NavLink>
           )}
         </div>
 
         {/* Blog Title and Image */}
         <h2 className="text-3xl font-extrabold text-gray-800 mb-5">{title}</h2>
-        <img className="rounded-xl" src={imageUrl} alt="Blog" />
+        <img className="rounded-xl h-40 object-cover bg-no-repeat" src={imageUrl} alt="Blog" />
 
         {/* Description Box */}
         <div className="mt-6">
@@ -106,7 +106,7 @@ export default function BlogDetailsPage() {
         {!isOwner && (
           <div className="mt-6">
             <form onSubmit={handleCommentSubmit} className="flex gap-2 items-center">
-              <div className="join border border-blue-100 w-full">
+              <div className="join border border-purple-300 w-full">
                 <input
                   className="input w-full join-item focus:outline-none border-none"
                   placeholder="Add a comment"
@@ -116,7 +116,8 @@ export default function BlogDetailsPage() {
                 />
                 <button
                   type="submit"
-                  className="btn join-item bg-blue-400 text-md text-white hover:text-black font-medium rounded-r-md focus:border-blue-300"
+                  className="bg-gradient-to-r from-indigo-600 via-purple-600
+               to-[#313030] join-item px-6 text-md text-white hover:text-black font-medium rounded-r-md"
                 >
                   Comment
                 </button>

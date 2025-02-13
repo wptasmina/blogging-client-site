@@ -4,6 +4,7 @@ import regImg from '../../assets/register.png'
 import { useContext, useState } from "react";
 import { AuthContext } from './AuthProvider';
 import { toast } from 'react-toastify';
+import { NavLink } from 'react-router-dom';
 
 export default function Register() {
   // const notify = () => toast("A new Blog has been added !");
@@ -39,9 +40,9 @@ export default function Register() {
   <div className="bg-[#EDF2FA]">
   <div className="hero min-h-screen sm:w-11/12 w-full mx-auto">
   <div className="hero-content p-0 flex-col sm:my-10 my-4 md:flex-row-reverse">
-    <div className="text-center lg:text-left">
-      <img src={regImg} className="sm:w-full w-40 md:my-6" alt="image" />
-    </div>
+     <div className="text-center lg:text-left hidden md:block">
+        <img src={regImg} className="w-96 h-72 md:my-6" alt="image" />
+      </div>
 
   <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-md py-6">
     <h1 className="md:text-4xl text-2xl font-bold text-center ">Register!</h1>
@@ -72,9 +73,14 @@ export default function Register() {
         </div>
         <div className="form-control mt-6">
           <input type="submit" value="Register" className="btn
-           bg-blue-500 border-0 text-white text-lg hover:bg-blue-500 btn-primary" />
+           bg-[#1d4372] border-0 text-white text-lg hover:bg-blue-500 btn-primary" />
         </div>
-
+        <p className="text-md text-center">
+                  New to the Website? Please{" "}
+                  <NavLink to="/login">
+                    <span className="text-[#1d4372] font-medium">Login</span>
+                  </NavLink>
+                </p>
       </form>
     </div>
   </div>

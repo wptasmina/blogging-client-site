@@ -57,7 +57,7 @@ export default function AddBlogPage() {
         Start your journey as a blogger! Share your ideas, stories, or knowledge with the world.
       </p>
 
-      <form onSubmit={handleSubmit} className="mt-8 px-16">
+      <form onSubmit={handleSubmit} className="mt-8 md:px-16">
         <div className='grid md:grid-cols-2 grid-cols-1 gap-4'>
           {/* User Info (Read-Only) */}
           <InputField label="User Name" name="userName" value={user?.displayName} readOnly />
@@ -93,7 +93,7 @@ export default function AddBlogPage() {
         <div className="flex justify-center mt-8">
           <button
             type="submit"
-            className="w-full py-2 bg-gradient-to-r from-[#003f6fbb] via-[#49226d] to-black text-white text-lg font-semibold rounded-lg focus:outline-none"
+            className="w-full py-2 bg-gradient-to-r from-[#003f6fbb] via-[#49226d] to-black text-white text-lg cursor-pointer font-semibold rounded-lg focus:outline-none"
             disabled={loading}
           >
             {loading ? 'Adding Blog...' : 'Add Blog'}

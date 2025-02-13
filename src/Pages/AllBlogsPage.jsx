@@ -34,7 +34,7 @@ export default function AllBlogsPage() {
           {/* Filter by Category */}
           <div>
             <select
-              className="select select-bordered sm:mb-0 mb-4 w-70 max-w-xs"
+              className="select select-bordered sm:mb-0 mb-4 w-70 max-w-xs  outline-none focus:outline-none"
               value={selectedCategory}
               onChange={(e) => setSelectedCategory(e.target.value)}
             >
@@ -53,7 +53,7 @@ export default function AllBlogsPage() {
           <label className="input input-bordered flex items-center gap-2">
             <input
               type="text"
-              className="grow"
+              className="grow  outline-none focus:outline-none"
               placeholder="Search by title"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
@@ -76,8 +76,8 @@ export default function AllBlogsPage() {
 
       {/* Blogs List */}
       <div className="md:w-11/12 mx-auto pb-8">
-        <p className="font-medium mb-4">Total Blogs: {filteredBlogs.length}</p>
-        <div className="p-0 px-2 md:px-0 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
+        {/* <p className="font-medium mb-4">Total Blogs: {filteredBlogs.length}</p> */}
+        <div className="p-0 px-2 md:px-0 grid lg:grid-cols-4 md:grid-cols-3 pt-6 sm:grid-cols-2 grid-cols-1 gap-4">
           {filteredBlogs.map((blog) => (
             <Blogs key={blog._id} blog={blog} />
           ))}
