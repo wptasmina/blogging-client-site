@@ -1,7 +1,9 @@
-import Carousel from './Carousel'
-import img2 from '../assets/site-bg.png'
+// import Carousel from './Carousel'
+// import img2 from '../assets/site-bg.png'
 import { Link } from 'react-router-dom'
-// import img2 from '../assets/blog-2.png'
+import Lottie from "lottie-react";
+import galaxy from "../assets/galaxy.json";
+
 
 export default function Banner() {
   return (
@@ -24,10 +26,9 @@ export default function Banner() {
           </div>
           </div>
 
-          <div data-aos="fade-up"
-     data-aos-duration="3000">
-            <img src={img2} className='w-full h-72 block bg-no-repeat object-cover ' />
-          </div>
+        <div className="hidden md:block w-3/6">
+          <Lottie animationData={galaxy} />
+        </div>
         </div>
       </section>
 
