@@ -1,26 +1,27 @@
-import img1 from '../assets/img-1.jpeg'
-import img2 from '../assets/img-2.jpg'
-import img3 from '../assets/img-3.jpg'
-import img4 from '../assets/img-4.jpg'
-import img5 from '../assets/img-5.jpg'
-import img6 from '../assets/img-6.jpg'
-import img7 from '../assets/img-7.jpg'
-import img8 from '../assets/img-8.jpeg'
+import logo1 from '../assets/marqu-logo/logo-1.jpg'
+import logo2 from '../assets/marqu-logo/logo-2.png'
+import logo3 from '../assets/marqu-logo/logo-3.png'
+import logo4 from '../assets/marqu-logo/logo-4.jpg'
+import logo5 from '../assets/marqu-logo/logo-5.webp'
+import logo6 from '../assets/marqu-logo/logo-6.png'
+import logo7 from '../assets/marqu-logo/logo-7.png'
+import logo8 from '../assets/marqu-logo/logo-8.jpg'
+
 
 
 
 export default function LogoSlice() {
   return (
     
-      <div className='flex justify-center items-center gap-8 border'>
-        <img src={img1} className="w-64 h-64 object-cover rounded-md" />
-        <img src={img2} className="w-64 h-64 object-cover rounded-md" />
-        <img src={img3} className="w-64 h-64 object-cover rounded-md" />
-        <img src={img4} className="w-64 h-64 object-cover rounded-md" />
-        <img src={img5} className="w-64 h-64 object-cover rounded-md" />
-        <img src={img6} className="w-64 h-64 object-cover rounded-md" />
-        <img src={img7} className="w-64 h-64 object-cover rounded-md" />
-        <img src={img8} className="w-64 h-64 object-cover mr-8 rounded-md" /> 
+      <div className='flex justify-center items-center gap-8 bg-white shadow-md'>
+        <img src={logo1} className="w-60 h-28 p-2 object-cover rounded-md border " />
+        <img src={logo2} className="w-60 h-28 p-2 object-cover rounded-md border " />
+        <img src={logo3} className="w-60 h-28 p-2 object-cover rounded-md border " />
+        <img src={logo4} className="w-60 h-28 p-2 object-cover rounded-md border " />
+        <img src={logo5} className="w-60 h-28 p-2 object-cover rounded-md border " />
+        <img src={logo6} className="w-60 h-28 p-2 object-cover rounded-md border " />
+        <img src={logo7} className="w-60 h-28 p-2 object-cover rounded-md border " />
+        <img src={logo8} className="w-60 h-28 p-2 object-cover mr-8 rounded-md border " /> 
       </div>
 
   )

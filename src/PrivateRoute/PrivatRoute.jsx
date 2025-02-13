@@ -1,16 +1,22 @@
-import React, { useContext } from 'react'
-import { Navigate } from 'react-router-dom';
-import { AuthContext } from '../Pages/AuthProvider/AuthProvider';
+import { Navigate, useLocation } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../Pages/AuthProvider/AuthProvider";
 
-export default function PrivatRoute({children}) {
-  const { user } = useContext(AuthContext);
+const PrivatRoute = ({ children }) => {
+  const { user, loading } = useContext(AuthContext);
+  const location = useLocation();
 
-  if (!user) {
-    return <Navigate to="/login" replace />;
+  // Show a loading indicator while checking authentication
+  if (loading) {
+    return <div className="text-center text-xl font-semibold">Loading...</div>;
   }
 
-  return <>{children}</>
+  // Redirect to login page if user is not authenticated
+  if (!user) {
+    return <Navigate to="/login" state={{ from: location }} replace />;
+  }
 
-  
-}
-  
+  return children;
+};
+
+export default PrivatRoute;

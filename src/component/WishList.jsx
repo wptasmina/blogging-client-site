@@ -38,7 +38,7 @@ export default function WishList() {
 
   return (
     
-    <div className="bg-white md:w-11/12 mx-auto my-10">
+    <div className="bg-white w-11/12 mx-auto my-10">
       <div className="bg-white flex flex-col justify-center items-center">
         <h2 className="text-3xl text-gray-800 text-center font-extrabold">Your Personalized Wish List</h2>
         <p className="text-lg text-gray-600 font-medium md:w-1/2 px-2 text-center py-2">
@@ -68,7 +68,7 @@ export default function WishList() {
                   <td>
                     <div className="flex items-center gap-3">
                       <div className="avatar">
-                        <div className="mask mask-squircle h-12 w-12">
+                        <div className="mask mask-squircle rounded-full h-12 w-12">
                           <img src={item.userImage} alt="User Avatar" />
                         </div>
                       </div>

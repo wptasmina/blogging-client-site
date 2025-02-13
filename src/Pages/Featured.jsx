@@ -26,7 +26,7 @@ const Featured = () => {
   }, []);
 
   return (
-    <div className="container mx-auto my-10">
+    <div className="w-11/12 mx-auto my-10">
       <h1 className="text-3xl font-bold text-center mb-6">
         Top 10 Blog Posts by Word Count
       </h1>

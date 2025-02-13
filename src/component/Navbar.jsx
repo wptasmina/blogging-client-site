@@ -121,15 +121,15 @@ export default function Navbar() {
                 className="menu menu-sm dropdown-content bg-base-100 rounded-sm w-52 p-2 gap-1"
               >
                 <li className="btn btn-xs rounded-sm border-none">
-                  {user.displayName}
+                  {user?.displayName}
                 </li>
                 <li className="btn btn-xs rounded-sm border-none">
-                  {user.email}
+                  {user?.email}
                 </li>
                 <li>
                   <Link
                     onClick={handleSignOut}
-                    className=" btn pb-3 btn-xs border-none w-full text-white hover:bg-purple-700 rounded-sm"
+                    className=" btn pb-3 btn-xs border-none w-full text-black hover:bg-purple-800 rounded-sm"
                   >
                     Logout
                   </Link>

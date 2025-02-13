@@ -34,7 +34,7 @@ return (
      data-aos-duration="3000" className="card bg-base-100 p-4 border shadow-xl">
   {/* user name and image  */}
   <div className='flex flex-row items-center pb-2 gap-2'>
-   <img src={userImage} className='w-12 h-12 object-cover rounded-full shadow border border-blue-300 p-1' alt="author image" />
+   <img src={userImage} className='w-12 h-12 object-cover rounded-full shadow border border-purple-600 p-1' alt="author image" />
    <div>
      <h4 className="text-md font-bold text-indigo-800">{userName} </h4>
      <p className="text-xs font-bold text-gray-500">{email} </p>

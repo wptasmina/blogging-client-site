@@ -9,7 +9,7 @@ export default function Latest_Blog() {
     <div className='md:w-11/12 mx-auto px-4 sm:px-0'>
     <h1 className='text-3xl text-black font-bold text-center my-10'>
       {/* Tech Trends to Watch in {new Date().getFullYear()} */}
-      Latest Blog Posts
+      Latest Blog <span className="text-purple-800">Posts</span>
     </h1>
     {/* <h1>blog: {blogs.length}</h1> */}
     <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 md:gap-4 gap-6 mb-10">

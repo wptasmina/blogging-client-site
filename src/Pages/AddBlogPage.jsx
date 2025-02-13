@@ -1,155 +1,135 @@
-import React, { useContext } from 'react'
-import AuthContext from './AuthProvider/AuthContext';
+import React, { useContext, useState } from 'react';
 import { toast } from 'react-toastify';
-
+import { AuthContext } from './AuthProvider/AuthProvider';
 
 export default function AddBlogPage() {
+  const { user } = useContext(AuthContext);
+  const [loading, setLoading] = useState(false);
 
-  const contextValue = useContext(AuthContext) 
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
 
-  const form = e.target;
+    const form = e.target;
 
-  const userName = form.userName.value;
-  const email = form.email.value;
-  const userImage = form.userImage.value;
-  const title = form.title.value;
-  const imageUrl = form.imageUrl.value;
-  const date = form.date.value;
-  const category = form.category.value;
-  const shortDesc = form.shortDesc.value;
-  const longDesc = form.longDesc.value;
+    const newAddBlog = {
+      userName: form.userName.value.trim(),
+      email: form.email.value.trim(),
+      userImage: form.userImage.value.trim(),
+      title: form.title.value.trim(),
+      imageUrl: form.imageUrl.value.trim(),
+      date: form.date.value,
+      category: form.category.value,
+      shortDesc: form.shortDesc.value.trim(),
+      longDesc: form.longDesc.value.trim(),
+    };
 
-  const newAddBlog = { userName, email, userImage, title, imageUrl,
-     date, category, shortDesc, longDesc }
+    if (!newAddBlog.category) {
+      toast.error('Please select a category!');
+      setLoading(false);
+      return;
+    }
 
-  // send data to the server
-  fetch('https://blogging-server-alpha.vercel.app/blogger', {
-    method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(newAddBlog)
-  })
-  .then(res => res.json())
-  .then(data => {
-    toast.success("Add blog success!")
+    try {
+      const response = await fetch('https://blogging-server-alpha.vercel.app/blogger', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(newAddBlog),
+      });
 
-    // console.log(data)
-    form.reset()
-  })
+      if (!response.ok) throw new Error('Failed to add blog');
 
-}
+      toast.success('Blog added successfully!');
+      form.reset();
+    } catch (error) {
+      toast.error('Failed to add blog. Please try again!');
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
-    <>
-    <div className="bg-base-100 w-full md:w-11/12 mx-auto shadow-sm md:px-10 px-4 my-10 pt-4 pb-10">
-        <h2 className="md:text-4xl text-2xl text-gray-800 font-extrabold pb-2 text-center">Add a New Blog</h2>
-        <p className="text-md text-gray-600 font-medium text-center md:w-1/2 mx-auto">Start your journey as a blogger! Create a new blog to share your unique ideas,
-      stories, or knowledge with the world.</p>
+    <div className="bg-white w-full md:w-11/12 mx-auto shadow-md rounded-md md:px-10 px-4 my-10 pt-4 pb-10 border">
+      <h2 className="md:text-4xl text-2xl text-gray-800 font-extrabold pb-2 text-center">
+        Add a New <span className='text-[#673596]'>Blog</span>
+      </h2>
+      <p className="text-md text-gray-600 font-medium text-center md:w-1/2 mx-auto">
+        Start your journey as a blogger! Share your ideas, stories, or knowledge with the world.
+      </p>
 
+      <form onSubmit={handleSubmit} className="mt-8 px-16">
+        <div className='grid md:grid-cols-2 grid-cols-1 gap-4'>
+          {/* User Info (Read-Only) */}
+          <InputField label="User Name" name="userName" value={user?.displayName} readOnly />
+          <InputField label="Email" name="email" value={user?.email} type="email" readOnly />
 
-      <form onSubmit={handleSubmit} className="mt-8">
-        <div className='grid md:grid-cols-2 grid-cols-1 gap-6'>
-          <div>
-            <label className="block text-lg font-medium text-gray-700 pb-2">
-            User Name:
-            </label>
-            <input
-            type="text"
-            name="userName"
-            placeholder='Enter your title'  className="w-full outline-none
-             px-3 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-1
-              focus:ring-[#60e49991]" required />
-          </div>
-          <div>
-            <label className="block text-lg font-medium text-gray-700 pb-2">
-            Email:
-            </label>
-              <input type="email" placeholder='Enter your email' name="email" required className="w-full outline-none px-3 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#60e49991]" />
-          </div>
+          {/* Blog Info */}
+          <InputField label="User Image URL" name="userImage" placeholder="Enter your Photo URL" />
+          <InputField label="Blog Title" name="title" placeholder="Enter your title" />
+          <InputField label="Image URL" name="imageUrl" placeholder="Enter your Image URL" />
+          <InputField label="Date" name="date" type="date" />
 
+          {/* Category Dropdown */}
           <div>
-            <label className="block text-lg font-medium text-gray-700 pb-2">
-             User Image:
-            </label>
-            <input type="text" id="fileInput" placeholder='Enter your Photo' name="userImage" required className="w-full outline-none px-3 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#60e49991]" />
-          </div>
-          <div>
-            <label className="block text-lg font-medium text-gray-700 pb-2">
-              Blog Title:
-            </label>
-            <input type="text" placeholder='Enter your title' name="title" required className="w-full outline-none px-3 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#60e49991]" />
-          </div>
-          <div className=''>
-            <label className="block text-lg font-medium text-gray-700 pb-2">
-             Image URL:
-            </label>
-              <input type="text" placeholder='Enter your Image URL' name="imageUrl" required className="w-full outline-none px-3 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#60e49991]" />
+            <label className="block text-lg font-medium text-gray-700 pb-2">Category:</label>
+            <select name="category" defaultValue="" required className="select select-bordered w-full border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#8845C8]">
+              <option value="" disabled>Select a Category</option>
+              <option>News</option>
+              <option>Web Developer</option>
+              <option>Travel</option>
+              <option>Sports</option>
+              <option>Technology</option>
+              <option>Lifestyle</option>
+              <option>Business Growth</option>
+            </select>
           </div>
 
-          <div className=''>
-            <label className="block text-lg font-medium text-gray-700 pb-2">
-             Date:
-            </label>
-              <input type="date" placeholder='Enter your Image URL' name="date" required className="w-full outline-none px-3 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#60e49991]" />
-          </div>
-          
-          <div>
-            <label className="block text-lg font-medium text-gray-700 pb-2">
-            Category:
-            </label>
-          <select name="category" defaultValue="" className="select select-bordered w-full border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#60e49991]">
-          <option value="" disabled>Select a Category</option> 
-            <option>News</option>
-            <option>Web Developer</option>
-            <option>Travel</option>
-            <option>Sports</option>
-            <option>Technology</option>
-            <option>LifetSyle</option>
-            <option>Business growth</option>
-          </select> 
-          </div>
-
-          <div>
-            <label className="block text-lg font-medium text-gray-700 pb-2">
-              Short Description:
-            </label>
-            <textarea
-              name="shortDesc"
-              placeholder="Enter your short description"
-              rows="1"
-              required
-              className="w-full p-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#60e49991]"
-            />
-          </div>
-          <div className=''>
-            <label className="block text-lg font-medium text-gray-700 pb-2">
-              Long Description:
-            </label>
-            <textarea
-              name="longDesc"
-              placeholder="Enter your Long Description"
-              rows="3"
-              required
-              className="w-full p-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#60e49991]"
-            />
-          </div>
+          {/* Descriptions */}
+          <TextareaField label="Short Description" name="shortDesc" rows="1" />
+          <TextareaField label="Long Description" name="longDesc" rows="2" />
         </div>
-          {/* Submit Button */}
-          <div className="flex justify-center mt-8">
-            <input
-            
-              type="submit"
-              value="Add Blog"
-              className="w-full py-3 bg-gray-800/90 text-white text-lg font-semibold rounded-lg focus:outline-none focus:bg-[#0EA64F]"
-            />
-              
-           
-          </div>
-        </form>
-      </div>
-    </>
-  )
+
+        {/* Submit Button */}
+        <div className="flex justify-center mt-8">
+          <button
+            type="submit"
+            className="w-full py-2 bg-gradient-to-r from-[#003f6fbb] via-[#49226d] to-black text-white text-lg font-semibold rounded-lg focus:outline-none"
+            disabled={loading}
+          >
+            {loading ? 'Adding Blog...' : 'Add Blog'}
+          </button>
+        </div>
+      </form>
+    </div>
+  );
 }
+
+// Reusable Input Component
+const InputField = ({ label, name, type = "text", value, readOnly, placeholder }) => (
+  <div>
+    <label className="block text-lg font-medium text-gray-700 pb-2">{label}:</label>
+    <input
+      type={type}
+      name={name}
+      defaultValue={value}
+      readOnly={readOnly}
+      placeholder={placeholder}
+      required
+      className="w-full outline-none px-3 py-2 border border-gray-200 rounded-lg focus:ring-1 focus:ring-[#8845C8]"
+    />
+  </div>
+);
+
+// Reusable Textarea Component
+const TextareaField = ({ label, name, rows }) => (
+  <div>
+    <label className="block text-lg font-medium text-gray-700 pb-2">{label}:</label>
+    <textarea
+      name={name}
+      rows={rows}
+      required
+      placeholder={`Enter your ${label.toLowerCase()}`}
+      className="w-full p-3 border border-gray-200 rounded-lg focus:ring-1 focus:ring-[#8845C8]"
+    />
+  </div>
+);

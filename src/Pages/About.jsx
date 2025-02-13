@@ -23,7 +23,8 @@ const About = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        About Our Blog
+        About Our 
+        <span className='text-[#673596]'> Blog</span>
       </motion.h1>
       
       {/* Description Section */}
