@@ -32,7 +32,6 @@ export const router = createBrowserRouter([
         {
           path: "/about",
           element: <About />,
-          // loader: () => fetch('https://blogging-server-alpha.vercel.app/homeblog')
         },
         {
           path: "/allblogs",

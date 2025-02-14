@@ -15,7 +15,7 @@ const About = () => {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-6 py-12">
+    <div className=" max-w-7xl mx-auto px-6 py-12">
       {/* Header Section */}
       <motion.h1
         className="text-4xl font-bold text-center mb-6"
@@ -26,9 +26,10 @@ const About = () => {
         About Our 
         <span className='text-[#673596]'> Blog</span>
       </motion.h1>
-      
-      {/* Description Section */}
-      <motion.p
+    
+    <div className="dark:bg-gray-900 text-gray-800 dark:text-white">
+        {/* Description Section */}
+        <motion.p
         className="text-lg text-gray-600 text-center mb-8"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -50,6 +51,8 @@ const About = () => {
           </motion.div>
         ))}
       </div>
+    </div>
+    
       
       {/* Call to Action Section */}
       <motion.div
@@ -67,6 +70,7 @@ const About = () => {
           Get Started
         </button>
       </motion.div>
+    
     </div>
   );
 };

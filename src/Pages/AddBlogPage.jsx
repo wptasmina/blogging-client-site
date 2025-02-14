@@ -57,7 +57,7 @@ export default function AddBlogPage() {
         Start your journey as a blogger! Share your ideas, stories, or knowledge with the world.
       </p>
 
-      <form onSubmit={handleSubmit} className="mt-8 md:px-16">
+      <form onSubmit={handleSubmit} className="dark:bg-gray-900 text-gray-800 dark:text-white mt-8 md:px-16">
         <div className='grid md:grid-cols-2 grid-cols-1 gap-4'>
           {/* User Info (Read-Only) */}
           <InputField label="User Name" name="userName" value={user?.displayName} readOnly />

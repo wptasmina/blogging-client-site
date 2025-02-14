@@ -1,6 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/logo-gl.png";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
+import { BsMoon, BsSun } from "react-icons/bs"; // Dark Mode Icons
 import { AuthContext } from "../Pages/AuthProvider/AuthProvider";
 
 export default function Navbar() {
@@ -14,6 +15,24 @@ export default function Navbar() {
       .catch((error) => {
         console.error("Failed to log out:", error.message);
       });
+  };
+
+
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+
+  useEffect(() => {
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+      document.body.classList.add("bg-gray-900", "text-white");
+    } else {
+      document.documentElement.classList.remove("dark");
+      document.body.classList.remove("bg-gray-900", "text-white");
+    }
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(theme === "light" ? "dark" : "light");
   };
 
   return (
@@ -102,6 +121,15 @@ export default function Navbar() {
         </div>
 
         <div className="navbar-end">
+
+          {/* Dark Mode Toggle Button */}
+        <button
+          onClick={toggleTheme}
+          className="ml-4 text-xl text-teal-600 dark:text-teal-600 p-2 rounded-full border border-teal-500 dark:border-teal-600 shadow-md"
+        >
+          {theme === "light" ? <BsMoon /> : <BsSun className="text-white" />}
+        </button>
+
           {user ? (
             <div className="dropdown dropdown-end">
               <button

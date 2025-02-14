@@ -38,15 +38,15 @@ export default function WishList() {
 
   return (
     
-    <div className="bg-white w-11/12 mx-auto my-10">
-      <div className="bg-white flex flex-col justify-center items-center">
+    <div className="w-11/12 mx-auto my-10 pb-10 rounded-md bg-slate-50">
+      <div className="bg-white flex flex-col justify-center items-center rounded-md pt-10">
         <h2 className="text-3xl text-gray-800 text-center font-extrabold">Your Personalized Wish List</h2>
         <p className="text-lg text-gray-600 font-medium md:w-1/2 px-2 text-center py-2">
           Keep track of your favorite blogs with your personalized wish list. Save, revisit, and enjoy the content you love anytime!
         </p>
       </div>
 
-      <div className="overflow-x-auto bg-slate-50 mt-4 rounded-md border">
+      <div className="overflow-x-auto dark:bg-gray-900 text-gray-800 dark:text-white  bg-slate-50 mt-4 rounded-md border">
         <table className="table w-full">
           {/* Table Header */}
           <thead className="bg-black text-white text-lg">
