@@ -52,7 +52,7 @@ return (
 
   
  <div className=" space-y-4">
-   <h2 className="card-title text-2xl text-gray-800 font-bold">{title}</h2>
+   <h2 className="card-title text-2xl text-gray-800 font-bold pt-4">{title}</h2>
    <div className='flex justify-between items-center'>
      <div>
        <p className='text-md text-indigo-800 font-bold'>{category}</p>
