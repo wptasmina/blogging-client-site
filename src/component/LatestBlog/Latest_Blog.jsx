@@ -6,11 +6,11 @@ export default function Latest_Blog() {
     const blogs = useLoaderData()
 
   return (
-    <div className='md:w-11/12 mx-auto px-4 sm:px-0'>
-    <h1 className='text-3xl text-black font-bold text-center my-10'>
-      {/* Tech Trends to Watch in {new Date().getFullYear()} */}
-      Latest Blog <span className="text-purple-800">Posts</span>
+  <div className="md:w-11/12 mx-auto px-4 sm:px-0">
+   <h1 className='text-3xl text-gray-700 dark:text-white font-bold text-center my-10'>
+      Latest Blog <span className="text-purple-800">Posts</span> {new Date().getFullYear()}
     </h1>
+
     {/* <h1>blog: {blogs.length}</h1> */}
     <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 md:gap-4 gap-6 mb-10">
       {Array.isArray(blogs) && blogs.length > 0 ? (
@@ -19,7 +19,7 @@ export default function Latest_Blog() {
         <p>No blogs available</p>
       )}
     </div>
-
     </div>
+
   )
 }

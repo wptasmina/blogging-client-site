@@ -22,17 +22,17 @@ export default function AllBlogsPage() {
      
 
       {/* Filter and Search Section */}
-      <div className="dark:bg-gray-700 text-gray-600 dark:text-white mt-6 py-4">
+      <div className="mt-6 py-4">
          {/* Text Start Section */}
-      <div className=" flex flex-col justify-center items-center mt-6">
-        <h2 className="text-3xl dark:text-white dark:bg-gray-900 text-gray-800 font-extrabold text-center">All Blog <span className='text-[#673596]'> Posts</span> </h2>
+      <div className="dark:bg-gray-900 text-gray-800 dark:text-white  flex flex-col justify-center items-center ">
+        <h2 className="text-3xl dark:text-white dark:bg-gray-900 text-gray-600 font-extrabold text-center">All Blog <span className='text-[#673596]'> Posts</span> </h2>
         <p className="text-md text-gray-400 font-medium pt-2 text-center">
           Browse all blogs in one place! Discover a variety of stories, insights, and ideas curated
           just for you.
         </p>
       </div>
 
-        <div className="my-6 w-11/12 mx-auto md:flex justify-center items-center gap-4">
+        <div className="dark:bg-gray-900 text-gray-800 dark:text-white  my-6 w-11/12 mx-auto md:flex justify-center items-center gap-4">
           {/* Filter by Category */}
           <div>
             <select
