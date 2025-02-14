@@ -29,9 +29,13 @@ export default function ReviewCard() {
   ];
 
   return (
-    <div className="dark:bg-gray-900 text-gray-800 dark:text-white max-w-7xl mx-auto px-6 py-12">
+    <div className=" w-11/12 mx-auto py-6">
+      <div className="pb-8">
+        <h2 className=" text-4xl font-extrabold pb-2">Top Review 📈</h2> 
+        <p>Allows users to add blogs seamlessly. Add real-time validation for better user experience.</p>
+      </div>
       {/* Features Section */}
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="dark:bg-gray-900 text-gray-800 dark:text-white grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {features.map((feature, index) => (
           <motion.div
             key={index}

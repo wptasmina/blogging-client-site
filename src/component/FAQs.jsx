@@ -3,7 +3,7 @@ import React from 'react'
 export default function FAQs() {
   return (
     <>
-    <div className='w-11/12 mx-auto shadow-sm'>
+<div className='w-11/12 mx-auto '>
     <h2 className='text-4xl font-extrabold my-8'>FAQs?.</h2>
 
 <div className='space-y-6 mb-10 dark:bg-gray-900 text-gray-800 dark:text-white '>
