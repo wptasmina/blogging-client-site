@@ -64,8 +64,8 @@ export default function BlogDetailsPage() {
   };
 
   return (
-    <div className="bg-white md:w-11/12 mx-auto">
-      <div className="card bg-gradient-to-r from-indigo-50 md:w-2/3 mx-auto md:p-10 py-6 px-4 my-8 shadow">
+    <div className="dark:bg-gray-900 text-gray-800 dark:text-white md:w-11/12 mx-auto">
+      <div className="card bg-white md:w-2/3 mx-auto md:p-10 py-6 px-4 my-8 shadow">
         
         {/* Blog Header */}
         <div className="card-body flex-row justify-between items-center gap-4 p-0 mb-4">

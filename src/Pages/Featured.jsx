@@ -30,7 +30,7 @@ const Featured = () => {
       <h1 className="text-3xl font-bold text-center mb-6">
         Top 10 Blog Posts by Word Count
       </h1>
-      <table className="min-w-full border border-gray-300 bg-white rounded-md shadow-md">
+      <table className="min-w-full border border-gray-300 dark:bg-gray-900 text-gray-800 dark:text-white rounded-md shadow-md">
         <thead className=" bg-black text-white">
           <tr>
             <th className="text-left py-2 px-4">#</th>

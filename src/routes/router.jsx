@@ -12,7 +12,7 @@ import Register from "../Pages/AuthProvider/Register";
 import BlogDetailsPage from "../Pages/BlogDetailsPage";
 import UpdateBlogePage from "../Pages/UpdateBlogePage";
 import PrivatRoute from "../PrivateRoute/PrivatRoute";
-import Comments from "../component/Comments";
+// import Comments from "../component/Comments";
 import WishList from "../component/WishList";
 import Featured from "../Pages/Featured";
 import About from './../Pages/About';
@@ -67,11 +67,11 @@ export const router = createBrowserRouter([
           element: <UpdateBlogePage />,
           loader: ({ params}) => fetch(`https://blogging-server-alpha.vercel.app/blog/${params.id}`)
         },
-        {
-          path: "/comments",
-          element: <Comments />,
-          loader: () => fetch(`https://blogging-server-alpha.vercel.app/comments`)
-        },
+        // {
+        //   path: "/comments",
+        //   element: <Comments />,
+        //   loader: () => fetch(`https://blogging-server-alpha.vercel.app/comments`)
+        // },
         {
           path: "/login",
           element: <LoginPage/>

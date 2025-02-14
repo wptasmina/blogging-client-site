@@ -125,7 +125,7 @@ export default function Navbar() {
           {/* Dark Mode Toggle Button */}
         <button
           onClick={toggleTheme}
-          className="ml-4 text-xl text-teal-600 dark:text-teal-600 p-2 rounded-full border border-teal-500 dark:border-teal-600 shadow-md"
+          className="mr-4 text-xl bg-gray-500 dark:text-gray-400 p-2 rounded-full border border-gray-400 dark:border-black shadow-2xl"
         >
           {theme === "light" ? <BsMoon /> : <BsSun className="text-white" />}
         </button>

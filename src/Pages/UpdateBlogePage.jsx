@@ -45,13 +45,13 @@ export default function UpdateBlogPage() {
   };
 
   return (
-    <div className="bg-base-100 w-full md:w-10/12 mx-auto shadow-sm px-4 my-10 pt-4 pb-10">
+    <div className="bg-white shadow-md w-full md:w-10/12 mx-auto rounded-md px-4 my-10 pt-4 pb-10">
       <h2 className="md:text-4xl text-2xl text-gray-800 font-extrabold pb-2 text-center">Update Blog</h2>
       <p className="text-md text-gray-600 font-medium text-center md:w-1/2 mx-auto">
         Fill in the details below to update the blog post. Make sure to provide accurate and descriptive information.
       </p>
 
-      <form onSubmit={handleUpdateBlog} className="mt-8 md:px-16">
+      <form onSubmit={handleUpdateBlog} className="dark:bg-gray-900 text-gray-800 dark:text-white mt-8 md:px-16">
         <div className="grid md:grid-cols-2 grid-cols-1 gap-6">
           <div>
             <label className="block text-lg font-medium text-gray-700 pb-2">User Name:</label>
