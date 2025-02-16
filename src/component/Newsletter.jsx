@@ -16,7 +16,7 @@ const Newsletter = () => {
   };
 
   return (
-    <section className="bg-bannerImg object-cover bg-top w-full py-20 flex flex-col items-center justify-center mb-10 ">
+    <section className="bg-bannerImg object-cover bg-bottom w-full py-20 flex flex-col items-center justify-center mb-10 ">
       <h2 className="text-xl text-white md:text-3xl font-bold mb-8">Subscribe to Our Newsletter</h2>
       <form
         onSubmit={handleSubmit}

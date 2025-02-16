@@ -11,7 +11,7 @@ export default {
         'Roboto': ['"Roboto Condensed", serif']
       },
       backgroundImage: {
-        bannerImg:  "url('/banner.png')",
+        bannerImg:  "url('/blog-1.png')",
         blogImg:  "url('/blog-1.png')",
       },
     },

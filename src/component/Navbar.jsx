@@ -36,7 +36,7 @@ export default function Navbar() {
   };
 
   return (
-    <div className="sticky top-0 z-50 w-full bg-gradient-to-r from-[#003E6F] via-purple-500 to-black backdrop:blur-lg">
+    <div className="sticky top-0 z-50 w-full bg-gradient-to-r from-[#003E6F] via-[#4E0A4A] to-black backdrop:blur-lg">
       <div className="navbar p-0 w-11/12 mx-auto">
         <div className="navbar-start p-0">
           <div className="dropdown  ">
@@ -125,7 +125,7 @@ export default function Navbar() {
           {/* Dark Mode Toggle Button */}
         <button
           onClick={toggleTheme}
-          className="mr-4 text-xl bg-gray-500 dark:text-gray-400 p-2 rounded-full border border-gray-400 dark:border-black shadow-2xl"
+          className="mr-4 text-xl bg-gray-800 text-gray-300 p-2 rounded-full border border-gray-700 dark:border-black shadow-2xl"
         >
           {theme === "light" ? <BsMoon /> : <BsSun className="text-white" />}
         </button>
@@ -167,7 +167,7 @@ export default function Navbar() {
           ) : (
             <NavLink
               to="/login"
-              className=" px-6 py-2 rounded-lg bg-gradient-to-r from-indigo-600 via-purple-600
+              className=" px-6 py-2 rounded-lg bg-gradient-to-r from-indigo-600 via-purple-700
                to-[#313030] duration-300 hover:bg-indigo-500 text-white border-none"
             >
               Login
