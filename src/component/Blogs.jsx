@@ -31,7 +31,7 @@ export default function Blogs({ blog }) {
 return (
 <> 
 <div data-aos="fade-up"
-     data-aos-duration="3000" className="card dark:bg-gray-900 text-gray-800 dark:text-white bg-base-100 p-4 border shadow-xl">
+     data-aos-duration="3000" className="card bg-base-100 p-4 border shadow-xl">
   {/* user name and image  */}
   <div className='flex flex-row items-center pb-2 gap-2'>
    <img src={userImage} className='w-12 h-12 object-cover rounded-full shadow border border-purple-600 p-1' alt="author image" />
