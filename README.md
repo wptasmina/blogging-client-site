@@ -28,6 +28,7 @@ Access the live project here: **[Galaxy_Blogger_app](https://galaxy-blogger.netl
 ## Github URL
 
 Front-end: **(https://github.com/wptasmina/blogging-client-site)**
+
 Backend: **(https://github.com/wptasmina/blogging-server-site)**
 
 ----
