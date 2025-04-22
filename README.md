@@ -1,9 +1,5 @@
 # Blog Website
 
-
-![Galaxy_Bloger_Img](https://github.com/user-attachments/assets/f5cb88f6-2954-4cbb-8223-e46e8af51f76)
-
-
 Welcome to the **Galaxy Blogger**, a platform to share, explore, and engage with blogs. This website is built using modern web development tools like React and Firebase, ensuring a smooth, responsive, and secure user experience. Follow the guide below to set up, explore, and understand the features of the project.
 
 ---
@@ -21,17 +17,9 @@ The purpose of this project is to create a functional, dynamic, and visually app
 
 ## Live URL
 
-Access the live project here: **[Galaxy_Blogger_app](https://galaxy-blogger.netlify.app)**
+Access the live project here: **[https://thriving-melomakarona-dcc8b4.netlify.app](#)**
 
 ---
-
-## Github URL
-
-Front-end: **(https://github.com/wptasmina/blogging-client-site)**
-
-Backend: **(https://github.com/wptasmina/blogging-server-site)**
-
-----
 
 ## Key Features
 
@@ -72,10 +60,5 @@ Backend: **(https://github.com/wptasmina/blogging-server-site)**
 - **Styling**: Custom CSS and Material-UI
 
 ----
-
-Client site run:  npm run dev <br/>
-server site run:  nodemon index.js
-
-
-
-
+Client site run: npm run dev
+server site run: nodemon index.js

@@ -87,7 +87,7 @@ export default function Navbar() {
           </div>
           <NavLink to="/">
             <div className="tooltip tooltip-bottom" data-tip="Galaxy Blogger.">
-              <img src={logo} className="md:w-24 w-14 mt-1" alt="Blogger Logo" />
+              <img src={logo} className="w-14 mt-1" alt="Blogger Logo" />
             </div>
           </NavLink>
         </div>
