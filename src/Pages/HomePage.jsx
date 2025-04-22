@@ -10,16 +10,16 @@ import ReviewCard from "../component/ReviewCard";
 
 
 export default function HomePage() {
-  
+
 
   return (
     <>
-    <Banner></Banner> 
-     <Latest_Blog />
-    <Newsletter />
-    <MarqueeSlice/>
-    <FAQs/>
-    <ReviewCard />
+      <Banner />
+      <Latest_Blog />
+      <Newsletter />
+      <MarqueeSlice />
+      <FAQs />
+      <ReviewCard />
     </>
   )
 }

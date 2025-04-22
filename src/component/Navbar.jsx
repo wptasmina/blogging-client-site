@@ -23,10 +23,10 @@ export default function Navbar() {
   useEffect(() => {
     if (theme === "dark") {
       document.documentElement.classList.add("dark");
-      document.body.classList.add("bg-gray-900", "text-white");
+      document.body.classList.add("bg-gray-950", "text-white");
     } else {
       document.documentElement.classList.remove("dark");
-      document.body.classList.remove("bg-gray-900", "text-white");
+      document.body.classList.remove("bg-gray-950", "text-white");
     }
     localStorage.setItem("theme", theme);
   }, [theme]);
