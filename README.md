@@ -72,3 +72,10 @@ Backend: **(https://github.com/wptasmina/blogging-server-site)**
 - **Styling**: Custom CSS and Material-UI
 
 ----
+
+Client site run:  npm run dev <br/>
+server site run:  nodemon index.js
+
+
+
+
