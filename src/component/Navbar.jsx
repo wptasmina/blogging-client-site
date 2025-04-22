@@ -62,7 +62,7 @@ export default function Navbar() {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-[#4E0A4A] rounded-box z-[1] mt-4 w-60 p-2 py-10 gap-4 shadow"
+              className="menu menu-sm dropdown-content bg-[#4E0A4A] rounded-b-lg z-[1] mt-4 w-60 p-2 py-10 gap-4 shadow"
             >
               <li className="text-white text-xl font-bold">
                 <NavLink to="/">Home</NavLink>
