@@ -39,11 +39,11 @@ export default function Navbar() {
     <div className="sticky top-0 z-50 w-full bg-gradient-to-r from-[#003E6F] via-[#4E0A4A] to-black backdrop:blur-lg">
       <div className="navbar p-0 w-11/12 mx-auto">
         <div className="navbar-start p-0">
-          <div className="dropdown  ">
+          <div className="dropdown">
             <div
               tabIndex={0}
               role="button"
-              className="btn-ghost hover:bg-slate-400 bg-white p-1 rounded-lg mr-1 md:hidden "
+              className="btn-ghost bg-[#003E6F] dark:bg-white p-1 rounded-lg mr-1 md:hidden "
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -62,7 +62,7 @@ export default function Navbar() {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-gray-800 rounded-box z-[1] mt-2 w-60 p-2 py-10 gap-4 shadow"
+              className="menu menu-sm dropdown-content bg-[#4E0A4A] rounded-box z-[1] mt-4 w-60 p-2 py-10 gap-4 shadow"
             >
               <li className="text-white text-xl font-bold">
                 <NavLink to="/">Home</NavLink>
@@ -94,7 +94,7 @@ export default function Navbar() {
 
         <div className="navbar-center hidden md:flex">
           <ul className="menu menu-horizontal px-1 gap-4">
-            <li className="text-white  text-md font-medium rounded-md">
+            <li className="text-white text-md font-medium rounded-md">
               <NavLink to="/">Home</NavLink>
             </li>
             <li className="text-white text-md font-medium rounded-md">
@@ -167,8 +167,8 @@ export default function Navbar() {
           ) : (
             <NavLink
               to="/login"
-              className=" px-6 py-2 rounded-lg bg-gradient-to-r from-indigo-600 via-purple-700
-               to-[#313030] duration-300 hover:bg-indigo-500 text-white border-none"
+              className=" md:px-6 py-2 px-4 rounded-lg bg-gradient-to-r from-indigo-600 via-purple-700
+               to-[#313030] duration-300 hover:bg-indigo-500 text-white text-sm sm:text-md border-none"
             >
               Login
             </NavLink>
