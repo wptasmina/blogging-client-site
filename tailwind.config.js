@@ -1,18 +1,18 @@
 //** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: "class", // ✅ Moved this outside of theme.extend
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
-      darkMode: "class",
-      FontFamily: {
-        'Roboto': ['"Roboto Condensed", serif']
+      fontFamily: { 
+        'roboto': ['"Roboto Condensed"', 'serif'],
       },
       backgroundImage: {
-        bannerImg:  "url('/blog-1.png')",
-        blogImg:  "url('/blog-1.png')",
+        bannerImg: "url('/blog-1.png')",
+        blogImg: "url('/blog-1.png')",
       },
     },
   },
@@ -20,4 +20,3 @@ export default {
     require('daisyui'),
   ],
 }
-

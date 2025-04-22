@@ -7,7 +7,7 @@ export default function Latest_Blog() {
 
   return (
   <div className="md:w-11/12 mx-auto px-4 sm:px-0">
-   <h1 className='text-3xl text-gray-700 font-bold text-center my-10'>
+   <h1 className='text-3xl text-gray-700 dark:text-white font-bold text-center my-10'>
       Latest Blog <span className="text-purple-800">Posts</span> {new Date().getFullYear()}
     </h1>
 
@@ -16,7 +16,7 @@ export default function Latest_Blog() {
       {Array.isArray(blogs) && blogs.length > 0 ? (
         blogs.map(blog => <Blogs key={blog._id} blog={blog} />)
       ) : (
-        <p>No blogs available</p>
+        <p className="text-red-500">No blogs available</p>
       )}
     </div>
     </div>
