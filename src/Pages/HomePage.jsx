@@ -6,12 +6,7 @@ import Latest_Blog from "../component/LatestBlog/Latest_Blog";
 import MarqueeSlice from "./MarqueeSlice";
 import Review from "./Review";
 
-
-
-
 export default function HomePage() {
-
-
   return (
     <>
       <Banner />
