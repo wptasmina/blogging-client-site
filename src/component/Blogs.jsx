@@ -63,7 +63,7 @@ return (
    <p className='font-normal'>{shortDesc}<span className=' text-green-600'><Link to={`/details/${blog._id}`}>...see Moer</Link></span></p>
    {/* <p className='text-gray-600 text-md font-normal'>{longDesc}</p> */}
 
-   <div className="card-actions flex justify-center md:gap-2 gap-4 pt-4">
+   <div className="flex justify-center gap-2 pt-4">
     <NavLink to={`/details/${blog._id}`}>
      <button className="inline-flex items-center bg-white font-medium bg-gradient-to-r from-indigo-800 via-purple-600 to-[#2b2a2a] bg-clip-text text-transparent border border-purple-600 text-[#74256e] px-4 py-2 rounded-md">
        <TbListDetails className=" mr-1" />
