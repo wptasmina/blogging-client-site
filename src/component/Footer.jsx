@@ -22,12 +22,12 @@ export default function Footer() {
   return (
     <div className='bg-blogImg bg-bottom'>
       <footer className=" text-gray-400 body-font">
-        <div className="w-11/12 mx-auto pt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="w-11/12 mx-auto pt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {/* Logo Section */}
           <div className="flex flex-col items-center md:items-start col-span-1">
             <Link to='/' className="flex flex-col items-center md:items-start">
               <img src={logo} className='w-28' alt="Logo" />
-              <span className="text-gray-500 text-xl font-bold mb-10">Galaxy Blogger</span>
+              <span className="text-gray-500 md:text-xl text-lg font-bold mb-10">Galaxy Blogger</span>
             </Link>
           </div>
 
@@ -35,10 +35,10 @@ export default function Footer() {
           <div className="px-4">
             <h2 className="title-font font-bold  text-gray-400 tracking-widest text-sm mb-3">COMPANY</h2>
             <nav className="list-none mb-10 space-y-2">
-              <li><a className=" text-gray-400 hover:text-gray-800">About</a></li>
-              <li><a className=" text-gray-400 hover:text-gray-800">Blog</a></li>
-              <li><a className=" text-gray-400 hover:text-gray-800">Jobs</a></li>
-              <li><a className=" text-gray-400 hover:text-gray-800">FAQ</a></li>
+              <li><a className=" text-gray-400 hover:text-gray-600">About</a></li>
+              <li><a className=" text-gray-400 hover:text-gray-600">Blog</a></li>
+              <li><a className=" text-gray-400 hover:text-gray-600">Jobs</a></li>
+              <li><a className=" text-gray-400 hover:text-gray-600">FAQ</a></li>
             </nav>
           </div>
 
@@ -46,10 +46,10 @@ export default function Footer() {
           <div className="px-4">
             <h2 className="title-font font-bold  text-gray-400 tracking-widest text-sm mb-3">HELP & SUPPORT</h2>
             <nav className="list-none mb-10 space-y-2">
-              <li><a className=" text-gray-400 hover:text-gray-800">Login</a></li>
-              <li><a className=" text-gray-400 hover:text-gray-800">Contact & Support</a></li>
-              <li><a className=" text-gray-400 hover:text-gray-800">VIP Support</a></li>
-              <li><a className=" text-gray-400 hover:text-gray-800">Plans</a></li>
+              <li><a className=" text-gray-400 hover:text-gray-600">Login</a></li>
+              <li><a className=" text-gray-400 hover:text-gray-600">Contact & Support</a></li>
+              <li><a className=" text-gray-400 hover:text-gray-600">VIP Support</a></li>
+              <li><a className=" text-gray-400 hover:text-gray-600">Plans</a></li>
             </nav>
           </div>
 
@@ -57,9 +57,9 @@ export default function Footer() {
           <div className="px-4">
             <h2 className="title-font font-bold  text-gray-400 tracking-widest text-sm mb-3">LEGAL</h2>
             <nav className="list-none mb-10 space-y-2">
-              <li><a className=" text-gray-400 hover:text-gray-800">Terms of Service</a></li>
-              <li><a className=" text-gray-400 hover:text-gray-800">Support Policy</a></li>
-              <li><a className=" text-gray-400 hover:text-gray-800">Privacy Policy</a></li>
+              <li><a className=" text-gray-400 hover:text-gray-600">Terms of Service</a></li>
+              <li><a className=" text-gray-400 hover:text-gray-600">Support Policy</a></li>
+              <li><a className=" text-gray-400 hover:text-gray-600">Privacy Policy</a></li>
             </nav>
           </div>
         </div>

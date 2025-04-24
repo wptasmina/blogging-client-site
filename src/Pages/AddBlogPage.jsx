@@ -49,15 +49,15 @@ export default function AddBlogPage() {
   };
 
   return (
-    <div className="bg-white w-full md:w-11/12 mx-auto shadow-md rounded-md md:px-10 px-4 my-10 pt-4 pb-10 border">
-      <h2 className="md:text-4xl text-2xl text-gray-800 font-extrabold pb-2 text-center">
+    <div className="bg-white dark:bg-gray-950 w-full md:w-11/12 mx-auto shadow-md rounded-md md:px-10 px-4 my-10 pt-4 pb-10 border dark:border-gray-800">
+      <h2 className="md:text-4xl text-2xl text-gray-800 dark:text-white font-extrabold pb-2 text-center">
         Add a New <span className='text-[#673596]'>Blog</span>
       </h2>
-      <p className="text-md  text-gray-400 font-medium text-center md:w-1/2 mx-auto">
+      <p className="text-md  text-gray-600 dark:text-gray-400 font-medium text-center md:w-1/2 mx-auto">
         Start your journey as a blogger! Share your ideas, stories, or knowledge with the world.
       </p>
 
-      <form onSubmit={handleSubmit} className="dark:bg-gray-900 text-gray-800 dark:text-white mt-8 md:px-16">
+      <form onSubmit={handleSubmit} className="dark:bg-gray-900 py-4 text-gray-800 dark:text-gray-800 mt-8 md:px-16 rounded-md">
         <div className='grid md:grid-cols-2 grid-cols-1 gap-4'>
           {/* User Info (Read-Only) */}
           <InputField label="User Name" name="userName" value={user?.displayName} readOnly />
@@ -71,7 +71,7 @@ export default function AddBlogPage() {
 
           {/* Category Dropdown */}
           <div>
-            <label className="block text-lg font-medium  text-gray-400 pb-2">Category:</label>
+            <label className="block text-lg font-medium  text-gray-400 pb-2 dark:text-gray-400">Category:</label>
             <select name="category" defaultValue="" required className="select select-bordered w-full border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#8845C8]">
               <option value="" disabled>Select a Category</option>
               <option>News</option>
