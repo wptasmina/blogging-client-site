@@ -60,22 +60,26 @@ return (
       <p className='font-medium text-gray-900 dark:text-gray-400'>{date}</p>
     </div>
    </div>
-   <p className='font-normal'>{shortDesc}<span className=' text-green-600'><Link to={`/details/${blog._id}`}>...see Moer</Link></span></p>
+   <p className='font-normal'>{shortDesc}<span className=' text-green-600'><Link to={`/details/${blog._id}`}>...See More</Link></span></p>
    {/* <p className=' text-gray-400 text-md font-normal'>{longDesc}</p> */}
 
    <div className="flex justify-center gap-2 pt-4">
-    <NavLink to={`/details/${blog._id}`}>
-     <button className="inline-flex items-center bg-white font-medium bg-gradient-to-r from-indigo-800 via-purple-600 to-[#2b2a2a] bg-clip-text text-transparent border border-purple-600 text-[#74256e] px-4 py-2 rounded-md">
-       <TbListDetails className=" mr-1" />
-       Details
-     </button>
-    </NavLink>
-
-    <button onClick={hendleWishList} className="inline-flex items-center bg-white font-medium bg-gradient-to-r from-indigo-800 via-purple-600 to-[#2b2a2a] bg-clip-text text-transparent border border-purple-600 text-[#74256e] px-4 py-2 rounded-md">
-      <FaRegHeart className=" mr-1" />
-      Wishlist
+  <NavLink to={`/details/${blog._id}`}>
+    <button className="inline-flex items-center bg-white font-medium bg-gradient-to-r from-indigo-800 via-purple-600 to-[#2b2a2a] bg-clip-text text-transparent border border-purple-600 px-4 py-2 rounded-md">
+      <TbListDetails className="mr-1 text-xl text-purple-900" />
+      Details
     </button>
-   </div>
+  </NavLink>
+
+  <button
+    onClick={hendleWishList}
+    className="inline-flex items-center bg-white font-medium bg-gradient-to-r from-indigo-800 via-purple-600 to-[#2b2a2a] bg-clip-text text-transparent border border-purple-600 px-4 py-2 rounded-md"
+  >
+    <FaRegHeart className="mr-1 text-xl text-purple-900" />
+    Wishlist
+  </button>
+</div>
+
  </div>
 
 </div>
