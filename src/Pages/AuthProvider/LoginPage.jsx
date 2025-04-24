@@ -57,7 +57,7 @@ export default function LoginPage() {
             </div>
 
             <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-md">
-              <h1 className="md:text-3xl text-2xl font-bold text-center pt-4">Login now!</h1>
+              <h1 className="md:text-3xl text-2xl font-bold text-center pt-4 dark:text-gray-800">Login now!</h1>
               <form onSubmit={handleSignIn} className="card-body">
                 <div className="form-control">
                   <label className="label">
@@ -67,7 +67,7 @@ export default function LoginPage() {
                     type="email"
                     placeholder="email"
                     name="email"
-                    className="input input-bordered focus:outline-none focus:border-[#5c89c4]"
+                    className="input input-bordered focus:outline-none dark:text-gray-800  focus:border-[#5c89c4]"
                     required
                   />
                 </div>
@@ -79,7 +79,7 @@ export default function LoginPage() {
                     type="password"
                     placeholder="password"
                     name="password"
-                    className="input input-bordered focus:outline-none focus:border-[#5c89c4]"
+                    className="input input-bordered focus:outline-none dark:text-gray-800 focus:border-[#5c89c4]"
                     required
                   />
                 </div>
@@ -87,14 +87,14 @@ export default function LoginPage() {
                   <input
                     type="submit"
                     value="Login"
-                    className="btn bg-[#1d4372] border-0 text-white text-lg hover:bg-blue-500 btn-primary"
+                    className="btn bg-[#1d4372] border-0 text-white text-lg hover:bg-blue-700 btn-primary"
                   />
                 </div>
 
                 <div className="divider">OR</div>
 
                 <div
-                  className="flex justify-center md:justify-start items-center gap-2 border md:gap-8 py-2 rounded-full hover:bg-[#EDF2FA]"
+                  className="flex justify-center md:justify-start items-center gap-2 dark:text-gray-800  border md:gap-8 py-2 rounded-full hover:bg-[#EDF2FA]"
                   onClick={handleGoogleSignIn}
                 >
                   <img src={gImg} className="md:w-6 w-4 ml-4" alt="Google" />
@@ -102,7 +102,7 @@ export default function LoginPage() {
                   <h4 className="w-full font-medium cursor-pointer">Continue with Google</h4>
                  </div>
                 </div>
-                <p className="text-md text-center pt-2">
+                <p className="text-md text-center pt-2 dark:text-gray-800">
                   New to the Website? Please 
                   <NavLink to="/register">
                     <span className="text-[#1d4372] font-medium"> Register</span>
