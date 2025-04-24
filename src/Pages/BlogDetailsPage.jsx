@@ -64,8 +64,8 @@ export default function BlogDetailsPage() {
   };
 
   return (
-    <div className="dark:bg-gray-900 text-gray-800 dark:text-white md:w-11/12 mx-auto">
-      <div className="card bg-white md:w-2/3 mx-auto md:p-10 py-6 px-4 my-8 shadow">
+    <div className=" text-gray-800 dark:text-white md:w-11/12 mx-auto">
+      <div className="card bg-white dark:bg-gray-900 md:w-2/3 mx-auto md:p-10 py-6 px-4 my-8 shadow">
         
         {/* Blog Header */}
         <div className="card-body flex-row justify-between items-center gap-4 p-0 mb-4">
@@ -73,11 +73,11 @@ export default function BlogDetailsPage() {
           <div className="flex flex-row items-center gap-2">
             <img
               src={userImage || 'https://via.placeholder.com/150'}
-              className="w-12 h-12 object-cover rounded-full shadow border border-[#003f6fbb] p-1"
+              className="w-12 h-12 object-cover rounded-full shadow border border-[#003f6fbb] dark:border-gray-600 p-1"
               alt="Author"
             />
             <div>
-              <h2 className="text-sm font-bold text-[#003f6fbb]">Athor: {userName}</h2>
+              <h2 className="text-sm font-bold text-[#003f6fbb] dark:text-[#49a4e9]">Athor: {userName}</h2>
               <p className="text-xs font-bold text-gray-500">{email}</p>
             </div>
           </div>
@@ -91,7 +91,7 @@ export default function BlogDetailsPage() {
         </div>
 
         {/* Blog Title and Image */}
-        <h2 className="text-3xl font-extrabold text-gray-800 mb-5">{title}</h2>
+        <h2 className="text-3xl font-extrabold text-gray-800 dark:text-gray-300 mb-5">{title}</h2>
         <img className="rounded-xl h-40 object-cover bg-no-repeat" src={imageUrl} alt="Blog" />
 
         {/* Description Box */}
@@ -108,7 +108,7 @@ export default function BlogDetailsPage() {
             <form onSubmit={handleCommentSubmit} className="flex gap-2 items-center">
               <div className="join border border-purple-300 w-full">
                 <input
-                  className="input w-full join-item focus:outline-none border-none"
+                  className="input w-full join-item focus:outline-none border-none dark:text-gray-400 dark:bg-gray-900"
                   placeholder="Add a comment"
                   value={newComment}
                   onChange={(e) => setNewComment(e.target.value)}
@@ -117,7 +117,7 @@ export default function BlogDetailsPage() {
                 <button
                   type="submit"
                   className="bg-gradient-to-r from-indigo-600 via-purple-600
-               to-[#313030] join-item px-6 text-md text-white hover:text-black font-medium rounded-r-md"
+               to-[#313030] join-item px-6 text-md text-white dark:text-gray-800 hover:text-black font-medium rounded-r-md"
                 >
                   Comment
                 </button>
@@ -133,15 +133,15 @@ export default function BlogDetailsPage() {
             <p className="text-gray-500">No comments yet. Be the first to comment!</p>
           ) : (
             comments.map((comment) => (
-              <div key={comment._id} className="flex items-start gap-2 mt-4">
+              <div key={comment?._id} className="flex items-center  gap-4 mt-4">
                 <img
-                  src={comment.userImage}
+                  src={comment?.userImage}
                   className="w-10 h-10 rounded-full border shadow"
                   alt="Commenter Avatar"
                 />
                 <div>
-                  <p className="text-sm font-bold">{comment.userName}</p>
-                  <p className="text-sm  text-gray-400">{comment.text}</p>
+                  <p className="text-sm font-bold">{comment?.userName}</p>
+                  <p className="text-sm  text-gray-700 dark:text-gray-400">{comment?.text}</p>
                 </div>
               </div>
             ))
