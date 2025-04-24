@@ -30,7 +30,7 @@ const About = () => {
     <div className="dark:bg-gray-900 text-gray-800 dark:text-white">
         {/* Description Section */}
         <motion.p
-        className="text-lg text-gray-600 text-center mb-8"
+        className="text-lg  text-gray-400 text-center mb-8"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
@@ -47,7 +47,7 @@ const About = () => {
             whileHover={{ scale: 1.05 }}
           >
             <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
-            <p className="text-gray-600">{feature.description}</p>
+            <p className=" text-gray-400">{feature.description}</p>
           </motion.div>
         ))}
       </div>
@@ -62,7 +62,7 @@ const About = () => {
         transition={{ duration: 0.6 }}
       >
         <h2 className="text-2xl font-semibold">Join Us Today!</h2>
-        <p className="text-gray-600 mt-2">Start writing and sharing your knowledge with the world.</p>
+        <p className=" text-gray-400 mt-2">Start writing and sharing your knowledge with the world.</p>
         <button 
           onClick={() => navigate('/addblog')}
           className="mt-4 bg-gradient-to-r from-indigo-600 via-purple-600 to-[#313030] duration-300 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition"

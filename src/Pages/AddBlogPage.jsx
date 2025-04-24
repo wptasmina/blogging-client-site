@@ -53,7 +53,7 @@ export default function AddBlogPage() {
       <h2 className="md:text-4xl text-2xl text-gray-800 font-extrabold pb-2 text-center">
         Add a New <span className='text-[#673596]'>Blog</span>
       </h2>
-      <p className="text-md text-gray-600 font-medium text-center md:w-1/2 mx-auto">
+      <p className="text-md  text-gray-400 font-medium text-center md:w-1/2 mx-auto">
         Start your journey as a blogger! Share your ideas, stories, or knowledge with the world.
       </p>
 
@@ -71,7 +71,7 @@ export default function AddBlogPage() {
 
           {/* Category Dropdown */}
           <div>
-            <label className="block text-lg font-medium text-gray-700 pb-2">Category:</label>
+            <label className="block text-lg font-medium  text-gray-400 pb-2">Category:</label>
             <select name="category" defaultValue="" required className="select select-bordered w-full border border-gray-200 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#8845C8]">
               <option value="" disabled>Select a Category</option>
               <option>News</option>
@@ -107,7 +107,7 @@ export default function AddBlogPage() {
 // Reusable Input Component
 const InputField = ({ label, name, type = "text", value, readOnly, placeholder }) => (
   <div>
-    <label className="block text-lg font-medium text-gray-700 pb-2">{label}:</label>
+    <label className="block text-lg font-medium  text-gray-400 pb-2">{label}:</label>
     <input
       type={type}
       name={name}
@@ -123,7 +123,7 @@ const InputField = ({ label, name, type = "text", value, readOnly, placeholder }
 // Reusable Textarea Component
 const TextareaField = ({ label, name, rows }) => (
   <div>
-    <label className="block text-lg font-medium text-gray-700 pb-2">{label}:</label>
+    <label className="block text-lg font-medium  text-gray-400 pb-2">{label}:</label>
     <textarea
       name={name}
       rows={rows}

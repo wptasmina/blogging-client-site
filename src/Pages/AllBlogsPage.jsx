@@ -39,7 +39,7 @@ export default function AllBlogsPage() {
       <div className="dark:bg-gray-900 text-gray-800 dark:text-white mt-6 py-4">
         {/* Text Start Section */}
         <div className="dark:bg-gray-900 text-gray-800 dark:text-white flex flex-col justify-center items-center">
-          <h2 className="text-3xl dark:text-white dark:bg-gray-900 text-gray-600 font-extrabold text-center">
+          <h2 className="text-3xl dark:text-white dark:bg-gray-900  text-gray-400 font-extrabold text-center">
             All Blog <span className="text-[#673596]"> Posts</span>
           </h2>
           <p className="text-md text-gray-400 font-medium pt-2 text-center">

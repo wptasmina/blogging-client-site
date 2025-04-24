@@ -61,7 +61,7 @@ return (
     </div>
    </div>
    <p className='font-normal'>{shortDesc}<span className=' text-green-600'><Link to={`/details/${blog._id}`}>...see Moer</Link></span></p>
-   {/* <p className='text-gray-600 text-md font-normal'>{longDesc}</p> */}
+   {/* <p className=' text-gray-400 text-md font-normal'>{longDesc}</p> */}
 
    <div className="flex justify-center gap-2 pt-4">
     <NavLink to={`/details/${blog._id}`}>

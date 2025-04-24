@@ -96,10 +96,10 @@ export default function BlogDetailsPage() {
 
         {/* Description Box */}
         <div className="mt-6">
-          <p className="text-lg text-gray-600 font-bold">{shortDesc}</p>
+          <p className="text-lg  text-gray-400 font-bold">{shortDesc}</p>
         </div>
         <div className="mt-6">
-          <p className="text-lg text-gray-600 font-bold">{longDesc}</p>
+          <p className="text-lg  text-gray-400 font-bold">{longDesc}</p>
         </div>
 
         {/* Add Comment Form - Blog owner cannot comment */}
@@ -141,7 +141,7 @@ export default function BlogDetailsPage() {
                 />
                 <div>
                   <p className="text-sm font-bold">{comment.userName}</p>
-                  <p className="text-sm text-gray-600">{comment.text}</p>
+                  <p className="text-sm  text-gray-400">{comment.text}</p>
                 </div>
               </div>
             ))

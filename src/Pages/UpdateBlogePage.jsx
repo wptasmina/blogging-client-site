@@ -47,39 +47,39 @@ export default function UpdateBlogPage() {
   return (
     <div className="bg-white shadow-md w-full md:w-10/12 mx-auto rounded-md px-4 my-10 pt-4 pb-10">
       <h2 className="md:text-4xl text-2xl text-gray-800 font-extrabold pb-2 text-center">Update Blog</h2>
-      <p className="text-md text-gray-600 font-medium text-center md:w-1/2 mx-auto">
+      <p className="text-md  text-gray-400 font-medium text-center md:w-1/2 mx-auto">
         Fill in the details below to update the blog post. Make sure to provide accurate and descriptive information.
       </p>
 
       <form onSubmit={handleUpdateBlog} className="dark:bg-gray-900 text-gray-800 dark:text-white mt-8 md:px-16">
         <div className="grid md:grid-cols-2 grid-cols-1 gap-6">
           <div>
-            <label className="block text-lg font-medium text-gray-700 pb-2">User Name:</label>
+            <label className="block text-lg font-medium  text-gray-400 pb-2">User Name:</label>
             <input type="text" name="userName" defaultValue={userName} required className="w-full px-3 py-3 border border-gray-200 rounded-lg focus:ring-1 focus:ring-[#49226d] outline-none" />
           </div>
 
           <div>
-            <label className="block text-lg font-medium text-gray-700 pb-2">User Email:</label>
+            <label className="block text-lg font-medium  text-gray-400 pb-2">User Email:</label>
             <input type="email" name="email" defaultValue={email} required className="w-full  px-3 py-3 border border-gray-200 rounded-lg focus:ring-1 focus:ring-[#49226d] outline-none" />
           </div>
 
           <div>
-            <label className="block text-lg font-medium text-gray-700 pb-2">User Image:</label>
+            <label className="block text-lg font-medium  text-gray-400 pb-2">User Image:</label>
             <input type="text" name="userImage" defaultValue={userImage} required className="w-full px-3 py-3 border border-gray-200 rounded-lg focus:ring-1 focus:ring-[#49226d] outline-none" />
           </div>
 
           <div>
-            <label className="block text-lg font-medium text-gray-700 pb-2">Blog Title:</label>
+            <label className="block text-lg font-medium  text-gray-400 pb-2">Blog Title:</label>
             <input type="text" name="title" defaultValue={title} required className="w-full px-3 py-3 border border-gray-200 rounded-lg focus:ring-1 focus:ring-[#49226d] outline-none" />
           </div>
 
           <div>
-            <label className="block text-lg font-medium text-gray-700 pb-2">Image URL:</label>
+            <label className="block text-lg font-medium  text-gray-400 pb-2">Image URL:</label>
             <input type="text" name="imageUrl" defaultValue={imageUrl} required className="w-full outline-none px-3 py-3 border border-gray-200 rounded-lg focus:ring-1 focus:ring-[#49226d]" />
           </div>
 
           <div>
-            <label className="block text-lg font-medium text-gray-700 pb-2">Category:</label>
+            <label className="block text-lg font-medium  text-gray-400 pb-2">Category:</label>
             <select name="category" defaultValue={category} className="select select-bordered w-full border border-gray-200 rounded-lg focus:ring-1 focus:ring-[#49226d] outline-none focus:outline-none">
               <option disabled>Select Category</option>
               <option value="Lifestyle">Lifestyle</option>
@@ -93,17 +93,17 @@ export default function UpdateBlogPage() {
           </div>
 
           <div>
-            <label className="block text-lg font-medium text-gray-700 pb-2">Date:</label>
+            <label className="block text-lg font-medium  text-gray-400 pb-2">Date:</label>
             <input type="date" name="date" defaultValue={date} required className="w-full outline-none px-3 py-3 border border-gray-200 rounded-lg focus:ring-1 focus:ring-[#49226d]" />
           </div>
 
           <div>
-            <label className="block text-lg font-medium text-gray-700 pb-2">Short Description:</label>
+            <label className="block text-lg font-medium  text-gray-400 pb-2">Short Description:</label>
             <textarea name="shortDesc" defaultValue={shortDesc} rows="1" required className="w-full p-3 border border-gray-200 rounded-lg focus:ring-1 focus:ring-[#49226d] outline-none"></textarea>
           </div>
 
           <div>
-            <label className="block text-lg font-medium text-gray-700 pb-2">Long Description:</label>
+            <label className="block text-lg font-medium  text-gray-400 pb-2">Long Description:</label>
             <textarea name="longDesc" defaultValue={longDesc} rows="3" required className="w-full p-3 border border-gray-200 rounded-lg focus:ring-1 focus:ring-[#49226d] outline-none "></textarea>
           </div>
         </div>
