@@ -1,0 +1,38 @@
+[
+    {
+        "image": "https://i.ibb.co.com/93t8hDcj/img-1.jpg",
+        "name": "Tanvir Hasan",
+        "desc": "This blogging site keeps me updated on the latest tech trends. Very well-organized content!",
+        "rating": 5
+    },
+    {
+        "image": "https://i.ibb.co.com/GQWKrnGJ/img-2.jpg",
+        "name": "Sadia Rahman",
+        "desc": "I love the design and the readability of articles. Makes long reads enjoyable!",
+        "rating": 3.5
+    },
+    {
+        "image": "https://i.ibb.co.com/qL4LR21h/img-3.jpg",
+        "name": "Imran Kabir",
+        "desc": "Best platform for beginner bloggers to express thoughts. Highly recommended.",
+        "rating": 4
+    },
+    {
+        "image": "https://i.ibb.co.com/YfYTrjg/Sallie.png",
+        "name": "Nusrat Jahan",
+        "desc": "Great mix of content — from tech to lifestyle. I always find something new to read.",
+        "rating": 5
+    },
+    {
+        "image": "https://i.ibb.co.com/rGxSJdZ/won-1.png",
+        "name": "Rafiul Alam",
+        "desc": "The blog submission process is super easy. Perfect for new writers!",
+        "rating": 4.2
+    },
+    {
+        "image": "https://i.ibb.co.com/6Jc7Z0K/won.webp",
+        "name": "Mehjabin Akter",
+        "desc": "I just love the community vibe here. Feedback on blogs is very encouraging.",
+        "rating": 5
+    }
+]

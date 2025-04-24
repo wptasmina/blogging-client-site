@@ -5,17 +5,10 @@ import img3 from '../assets/img-3.jpg';
 import img4 from '../assets/img-4.jpg';
 import img5 from '../assets/img-5.jpg';
 import img6 from '../assets/img-6.jpg';
-
 // review 
 import star1 from '../assets/review/star-1.png'
 import star2 from '../assets/review/star-2.png'
 import star3 from '../assets/review/star-3.png'
-// import star1 from '../assets/review/star-1.png';
-// import star2 from '../assets/review/star-2.png';
-// import star3 from '../assets/review/star-3.png';
-
-
-
 
 export default function ReviewCard() {
 
