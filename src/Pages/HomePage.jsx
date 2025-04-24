@@ -4,7 +4,6 @@ import Newsletter from "../component/Newsletter";
 import FAQs from "../component/FAQs";
 import Latest_Blog from "../component/LatestBlog/Latest_Blog";
 import MarqueeSlice from "./MarqueeSlice";
-import ReviewCard from "../component/ReviewCard";
 import Review from "./Review";
 
 
@@ -21,7 +20,6 @@ export default function HomePage() {
       <MarqueeSlice />
       <FAQs />
       <Review />
-      <ReviewCard />
     </>
   )
 }

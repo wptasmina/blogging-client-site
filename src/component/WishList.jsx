@@ -15,7 +15,7 @@ export default function WishList() {
   const [wishLists, setWishLists] = useState(useLoaderData());
 
   const hendleDelete = (id) => {
-    fetch(`https://blogging-server-alpha.vercel.app/deleteBlog/${id}`, {
+    fetch(` http://localhost:5000/deleteBlog/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
