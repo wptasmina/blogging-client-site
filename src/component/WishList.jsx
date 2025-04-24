@@ -5,14 +5,10 @@ import { useLoaderData, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 
-export default function WishList() {
-
-  
+export default function WishList() { 
   const { user } = useContext(AuthContext);
-
-  const navigate = useNavigate();
-
   const [wishLists, setWishLists] = useState(useLoaderData());
+  const navigate = useNavigate();
 
   const hendleDelete = (id) => {
     fetch(` http://localhost:5000/deleteBlog/${id}`, {
@@ -34,13 +30,10 @@ export default function WishList() {
       });
   };
 
-
-
   return (
-    
-    <div className="w-11/12 mx-auto my-10 pb-10 rounded-md bg-slate-50">
-      <div className="bg-white flex flex-col justify-center items-center rounded-md pt-10">
-        <h2 className="text-3xl text-gray-800 text-center font-extrabold">Your Personalized Wish List</h2>
+    <div className="w-11/12 mx-auto mb-6 pb-10 rounded-md dark:text-gray-950">
+      <div className="bg-white dark:bg-gray-950 flex flex-col justify-center items-center rounded-md pt-10 pb-4">
+        <h2 className="text-3xl text-gray-800 dark:text-gray-50 text-center font-extrabold">Your Personalized Wish List</h2>
         <p className="text-lg  text-gray-400 font-medium md:w-1/2 px-2 text-center py-2">
           Keep track of your favorite blogs with your personalized wish list. Save, revisit, and enjoy the content you love anytime!
         </p>
@@ -84,12 +77,12 @@ export default function WishList() {
                         <RiDeleteBin5Fill className="text-xl text-red-500 cursor-pointer hover:text-red-600" />
                       </button>
                       {/* Details Button */}
-                      <button
+                      {/* <button
                         onClick={() => navigate(`/details/${item._id}`)}
                         className="btn btn-ghost btn-xs text-md text-black font-medium"
                       >
                         Details
-                      </button>
+                      </button> */}
                     </div>
                   </td>
                 </tr>
