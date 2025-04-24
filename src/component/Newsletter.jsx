@@ -16,17 +16,17 @@ const Newsletter = () => {
   };
 
   return (
-    <section className="bg-bannerImg object-cover bg-bottom w-full py-20 flex flex-col items-center justify-center mb-10 ">
-      <h2 className="text-xl text-white md:text-3xl font-bold mb-8">Subscribe to Our Newsletter</h2>
+    <section className="bg-bannerImg bg-no-repeat bg-cover bg-center h-70 w-full flex flex-col items-center justify-center mb-10">
       <form
         onSubmit={handleSubmit}>
-        <div className="flex flex-col sm:flex-row sm:gap-0 gap-4 items-center join">
+      <h2 className="text-xl text-gray-800 dark:text-gray-800 md:text-3xl font-bold pt-20 pb-8">Subscribe to Our Newsletter</h2>
+        <div className="flex flex-col sm:flex-row sm:gap-0 gap-4 items-center join pb-20">
           <input
             type="email"
             placeholder="Enter your email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="px-4 py-2 border border-purple-600 outline-none  rounded-lg sm:rounded-l-md sm:rounded-none  w-72"
+            className="px-4 py-2 border border-purple-600 dark:text-gray-700 outline-none  rounded-lg sm:rounded-l-md sm:rounded-none  w-72"
             required
           />
           <button
