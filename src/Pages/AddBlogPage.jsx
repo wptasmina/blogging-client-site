@@ -30,9 +30,9 @@ export default function AddBlogPage() {
       return;
     }
     
-    
+
     try {
-      const response = await fetch('http://localhost:5000/blogger', {
+      const response = await fetch('https://blogging-server-wheat.vercel.app/blogger', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newAddBlog),

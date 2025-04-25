@@ -11,7 +11,7 @@ export default function Blogs({ blog }) {
   const hendleWishList = () => {
     const newWishList = { userName, email, userImage, title }
 
-    fetch('http://localhost:5000/wishlist', {
+    fetch('https://blogging-server-wheat.vercel.app/wishlist', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
