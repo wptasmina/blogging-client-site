@@ -31,7 +31,7 @@ const Featured = () => {
         Top 10 Blog Posts by Word Count
       </h1>
       <div className="">
-      <table className="min-w-full rounded-lg border dark:border-gray-700 text-gray-800 dark:text-gray-400 shadow-md">
+      <table className="min-w-full rounded-lg border dark:border-gray-800 text-gray-800 dark:text-gray-400 shadow-md">
         <thead className=" bg-black rounded-t-lg text-white">
           <tr>
             <th className="text-left py-2 px-4">#</th>

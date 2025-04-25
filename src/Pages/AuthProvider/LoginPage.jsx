@@ -91,7 +91,7 @@ export default function LoginPage() {
                   />
                 </div>
 
-                <div className="divider">OR</div>
+                <div className="divider dark:text-gray-800">OR</div>
 
                 <div
                   className="flex justify-center md:justify-start items-center gap-2 dark:text-gray-800  border md:gap-8 py-2 rounded-full hover:bg-[#EDF2FA]"
