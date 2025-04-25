@@ -30,8 +30,9 @@ const Featured = () => {
       <h1 className="text-3xl font-bold text-center mb-6">
         Top 10 Blog Posts by Word Count
       </h1>
-      <table className="min-w-full border border-gray-300 dark:bg-gray-900 text-gray-800 dark:text-white rounded-md shadow-md">
-        <thead className=" bg-black text-white">
+      <div className="">
+      <table className="min-w-full rounded-lg border dark:border-gray-700 text-gray-800 dark:text-gray-400 shadow-md">
+        <thead className=" bg-black rounded-t-lg text-white">
           <tr>
             <th className="text-left py-2 px-4">#</th>
             <th className="text-left py-2 px-4">Title</th>
@@ -45,18 +46,19 @@ const Featured = () => {
             <tr
               key={post._id}
               className={`${
-                index % 2 === 0 ? "bg-gray-100" : "bg-white"
-              } hover:bg-gray-50`}
+                index % 2 === 0 ? "bg-gray-100 dark:bg-gray-900" : "bg-white dark:bg-gray-900"
+              } hover:bg-gray-300`}
             >
               <td className="py-2 px-4">{index + 1}</td>
-              <td className="py-2 px-4">{post.title}</td>
-              <td className="py-2 px-4">{post.userName}</td>
-              <td className="py-2 px-4">{post.date}</td>
-              <td className="py-2 px-4">{post.wordCount}</td>
+              <td className="py-2 px-4">{post?.title}</td>
+              <td className="py-2 px-4">{post?.userName}</td>
+              <td className="py-2 px-4">{post?.date}</td>
+              <td className="py-2 px-4">{post?.wordCount}</td>
             </tr>
           ))}
         </tbody>
       </table>
+      </div>
     </div>
   );
 };
