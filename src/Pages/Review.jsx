@@ -6,7 +6,7 @@ export default function Review() {
   const [review, setReview] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/review")
+    axios.get("https://blogging-server-alpha.vercel.app/review")
       .then((res) => {
         setReview(res.data);
       });

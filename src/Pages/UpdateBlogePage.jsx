@@ -25,7 +25,7 @@ export default function UpdateBlogPage() {
     };
 
     try {
-      const response = await fetch(` http://localhost:5000/blog/${_id}`, {
+      const response = await fetch(` https://blogging-server-alpha.vercel.app/blog/${_id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(updatedBlog),
