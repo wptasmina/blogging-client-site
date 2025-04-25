@@ -46,7 +46,7 @@ export default function BlogDetailsPage() {
     };
 
     try {
-      const response = await fetch(' https://blogging-server-alpha.vercel.app/comments', {
+      const response = await fetch('https://blogging-server-alpha.vercel.app/comments', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(commentData),
