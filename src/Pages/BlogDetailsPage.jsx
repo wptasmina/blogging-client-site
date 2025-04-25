@@ -65,7 +65,7 @@ export default function BlogDetailsPage() {
 
   return (
     <div className=" text-gray-800 dark:text-white md:w-11/12 mx-auto">
-      <div className="card bg-white dark:bg-gray-900 md:w-2/3 mx-auto md:p-10 py-6 px-4 my-8 shadow">
+      <div className="card bg-gray-100 dark:bg-gray-900 md:w-2/3 mx-auto md:p-10 py-6 px-4 my-8 shadow">
         
         {/* Blog Header */}
         <div className="card-body flex-row justify-between items-center gap-4 p-0 mb-4">
@@ -77,7 +77,7 @@ export default function BlogDetailsPage() {
               alt="Author"
             />
             <div>
-              <h2 className="text-sm font-bold text-[#003f6fbb] dark:text-[#49a4e9]">Athor: {userName}</h2>
+              <h2 className="text-sm font-bold text-[#003f6ffb] dark:text-[#49a4e9]">Athor: {userName}</h2>
               <p className="text-xs font-bold text-gray-500">{email}</p>
             </div>
           </div>
@@ -85,7 +85,7 @@ export default function BlogDetailsPage() {
           {/* Edit button only for the blog owner */}
           {isOwner && (
             <NavLink to={`/updateBlog/${_id}`}>
-              <FaPenToSquare className="text-2xl text-[#003f6fbb] shadow cursor-pointer" />
+              <FaPenToSquare className="text-2xl text-[#003f6f] dark:text-[#377cb1] shadow cursor-pointer" />
             </NavLink>
           )}
         </div>
@@ -96,10 +96,10 @@ export default function BlogDetailsPage() {
 
         {/* Description Box */}
         <div className="mt-6">
-          <p className="text-lg  text-gray-400 font-bold">{shortDesc}</p>
+          <p className="text-lg  text-gray-700 dark:text-gray-400 font-bold">{shortDesc}</p>
         </div>
         <div className="mt-6">
-          <p className="text-lg  text-gray-400 font-bold">{longDesc}</p>
+          <p className="text-lg  text-gray-700 dark:text-gray-400 font-bold">{longDesc}</p>
         </div>
 
         {/* Add Comment Form - Blog owner cannot comment */}
