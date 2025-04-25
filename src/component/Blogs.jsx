@@ -6,11 +6,9 @@ import { Link } from 'react-router-dom';
 
 export default function Blogs({ blog }) {
   const { userName, email, userImage, title, imageUrl, date, shortDesc, longDesc, category } = blog
-
   const navigate = useNavigate()
 
   const hendleWishList = () => {
-
     const newWishList = { userName, email, userImage, title }
 
     fetch(' http://localhost:5000/wishlist', {
@@ -26,7 +24,6 @@ export default function Blogs({ blog }) {
       })
   }
 
-
   return (
     <>
       <div data-aos="fade-up"
@@ -36,7 +33,7 @@ export default function Blogs({ blog }) {
         <div className='flex flex-row items-center pb-2 gap-2'>
           <img src={userImage} className='w-12 h-12 object-cover rounded-full shadow border border-purple-600 p-1' alt="author image" />
           <div>
-            <h4 className="text-md font-bold text-indigo-800">{userName} </h4>
+            <h4 className="text-md font-bold text-indigo-800 dark:text-[#36a7fd]">{userName} </h4>
             <p className="text-xs font-bold text-gray-500">{email} </p>
           </div>
         </div>
@@ -51,16 +48,16 @@ export default function Blogs({ blog }) {
         </figure>
 
         <div className=" space-y-4 dark:bg-gray-900">
-          <h2 className="card-title text-2xl text-gray-800 dark:text-gray-300 font-bold pt-4">{title}</h2>
+          <h2 className="card-title text-2xl text-gray-800 dark:text-gray-200 font-bold pt-4">{title}</h2>
           <div className='flex justify-between items-center'>
             <div>
-              <p className='text-md text-indigo-800 font-bold'>{category}</p>
+              <p className='text-md text-indigo-800 dark:text-[#36a7fd] font-bold'>{category}</p>
             </div>
             <div>
               <p className='font-medium text-gray-900 dark:text-gray-400'>{date}</p>
             </div>
           </div>
-          <p className='font-normal'>{shortDesc}<span className=' text-green-600'><Link to={`/details/${blog._id}`}>...See More</Link></span></p>
+          <p className='font-normal'>{shortDesc}<span className=' text-green-600'><Link to={`/details/${blog._id}`}>...see more</Link></span></p>
           {/* <p className=' text-gray-400 text-md font-normal'>{longDesc}</p> */}
 
           <div className="flex justify-center gap-2 pt-4">
