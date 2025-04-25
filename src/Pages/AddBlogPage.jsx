@@ -29,10 +29,10 @@ export default function AddBlogPage() {
       setLoading(false);
       return;
     }
-    
+ 
 
     try {
-      const response = await fetch('https://blogging-server-wheat.vercel.app/blogger', {
+      const response = await fetch('https://blogging-server-omega.vercel.app/blogger', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newAddBlog),

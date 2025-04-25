@@ -18,7 +18,7 @@ export default function BlogDetailsPage() {
 
   // Fetch comments on mount
   useEffect(() => {
-    fetch(` https://blogging-server-wheat.vercel.app/comments/${_id}`)
+    fetch(` https://blogging-server-omega.vercel.app/comments/${_id}`)
       .then((res) => res.json())
       .then(setComments)
       .catch((error) => console.error('Failed to fetch comments:', error));
@@ -46,7 +46,7 @@ export default function BlogDetailsPage() {
     };
 
     try {
-      const response = await fetch('https://blogging-server-wheat.vercel.app/comments', {
+      const response = await fetch('https://blogging-server-omega.vercel.app/comments', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(commentData),

@@ -11,7 +11,7 @@ export default function WishList() {
   const navigate = useNavigate();
 
   const hendleDelete = (id) => {
-    fetch(`https://blogging-server-wheat.vercel.app/deleteBlog/${id}`, {
+    fetch(`https://blogging-server-omega.vercel.app/deleteBlog/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
