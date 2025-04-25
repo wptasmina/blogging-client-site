@@ -12,7 +12,6 @@ import Register from "../Pages/AuthProvider/Register";
 import BlogDetailsPage from "../Pages/BlogDetailsPage";
 import UpdateBlogePage from "../Pages/UpdateBlogePage";
 import PrivatRoute from "../PrivateRoute/PrivatRoute";
-// import Comments from "../component/Comments";
 import WishList from "../component/WishList";
 import Featured from "../Pages/Featured";
 import About from './../Pages/About';
