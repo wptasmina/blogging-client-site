@@ -27,7 +27,7 @@ const About = () => {
         <span className='text-[#673596]'> Blog</span>
       </motion.h1>
     
-    <div className="dark:bg-gray-900 text-gray-800 dark:text-white">
+    <div className="">
         {/* Description Section */}
         <motion.p
         className="text-lg  text-gray-400 text-center mb-8"
@@ -43,7 +43,7 @@ const About = () => {
         {features.map((feature, index) => (
           <motion.div
             key={index}
-            className="bg-white p-6 rounded-lg shadow-lg text-center border"
+            className="bg-white dark:bg-gray-900 dark:text-gray-300 p-6 rounded-lg shadow-lg text-center border dark:border-gray-700 "
             whileHover={{ scale: 1.05 }}
           >
             <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>

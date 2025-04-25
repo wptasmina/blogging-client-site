@@ -7,7 +7,7 @@ export default function Latest_Blog() {
 
   return (
   <div className="md:w-11/12 mx-auto px-4 sm:px-0">
-   <h1 className='md:text-3xl text-2xl  text-gray-400 dark:text-white font-bold text-center my-10'>
+   <h1 className='md:text-3xl text-2xl  text-gray-800 dark:text-white font-bold text-center my-10'>
       Latest Blog <span className="text-purple-800">Posts</span> {new Date().getFullYear()}
     </h1>
 
