@@ -30,7 +30,7 @@ const About = () => {
     <div className="">
         {/* Description Section */}
         <motion.p
-        className="text-lg  text-gray-400 text-center mb-8"
+        className="text-lg  text-gray-400 text-center md:w-2/3 w-full mx-auto mb-8"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
