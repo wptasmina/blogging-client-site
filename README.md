@@ -4,6 +4,21 @@ Welcome to **Galaxy Blogger** — a modern, responsive blog website built with R
 
 ---
 
+## 🌐 Live URL
+
+👉 [Visit the Live Site](https://thriving-melomakarona-dcc8b4.netlify.app)
+
+---
+
+## 📁 Project Repositories
+
+| Part         | GitHub Link                                                     |
+|--------------|------------------------------------------------------------------|
+| **Client**   | [blogging-client-site](https://github.com/wptasmina/blogging-client-site) |
+| **Server**   | [blogging-server-site](https://github.com/wptasmina/blogging-server-site) |
+
+---
+
 ## 🌟 Purpose
 
 To build a feature-rich blog platform where users can:
@@ -13,12 +28,6 @@ To build a feature-rich blog platform where users can:
 - 📌 Wishlist favorite blogs  
 - 💬 Interact with others through comments  
 - 📱 Enjoy a seamless and responsive experience
-
----
-
-## 🌐 Live URL
-
-👉 [https://thriving-melomakarona-dcc8b4.netlify.app](https://thriving-melomakarona-dcc8b4.netlify.app)
 
 ---
 
@@ -91,4 +100,3 @@ Contributions are welcome! Feel free to fork the repo and submit a pull request.
 ## 📩 Feedback
 
 If you’ve used Galaxy Blogger, share your thoughts! Feedback and suggestions are always appreciated.
-
