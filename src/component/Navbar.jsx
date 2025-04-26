@@ -75,7 +75,7 @@ export default function Navbar() {
                   <li className="text-white text-xl font-bold">
                     <NavLink to="/addblog">Add Blogs</NavLink>
                   </li>
-                  <li className="text-white  text-xl font-bold">
+                  <li className="text-white  text-xl font-bold ">
                     <NavLink to="/wishlist">Wishlist</NavLink>
                   </li>
                 </>
@@ -97,10 +97,10 @@ export default function Navbar() {
 
         <div className="navbar-center hidden md:flex">
           <ul className="menu menu-horizontal px-1 gap-4">
-            <li className="text-white text-md font-medium rounded-md">
+            <li className="text-white text-md font-medium rounded-md ">
               <NavLink to="/">Home</NavLink>
             </li>
-            <li className="text-white text-md font-medium rounded-md">
+            <li className="text-white text-md font-medium rounded-md active">
               <NavLink to="/about">About</NavLink>
             </li>
             {user && (
