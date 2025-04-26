@@ -43,7 +43,7 @@ export default function Navbar() {
             <div
               tabIndex={0}
               role="button"
-              className="btn-ghost bg-[#003E6F] dark:bg-white p-1 rounded-lg mr-1 md:hidden "
+              className="btn-ghost bg-[#003E6F] text-white dark:text-white p-1 rounded-lg mr-1 md:hidden "
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -66,6 +66,9 @@ export default function Navbar() {
             >
               <li className="text-white text-xl font-bold">
                 <NavLink to="/">Home</NavLink>
+              </li>
+              <li className="text-white text-md font-medium rounded-md">
+                <NavLink to="/about">About</NavLink>
               </li>
               {user && (
                 <>
@@ -110,7 +113,7 @@ export default function Navbar() {
                 </li>
               </>
             )}
-            
+
             <li className="text-white text-md font-medium rounded-md">
               <NavLink to="/allblogs">All Blogs</NavLink>
             </li>
@@ -123,12 +126,12 @@ export default function Navbar() {
         <div className="navbar-end">
 
           {/* Dark Mode Toggle Button */}
-        <button
-          onClick={toggleTheme}
-          className="mr-4 text-xl bg-gray-800 text-gray-300 p-2 rounded-full border border-gray-700 dark:border-black shadow-2xl"
-        >
-          {theme === "light" ? <BsMoon /> : <BsSun className="text-white" />}
-        </button>
+          <button
+            onClick={toggleTheme}
+            className="mr-4 text-xl bg-gray-800 text-gray-300 p-2 rounded-full border border-gray-700 dark:border-black shadow-2xl"
+          >
+            {theme === "light" ? <BsMoon /> : <BsSun className="text-white" />}
+          </button>
 
           {user ? (
             <div className="dropdown dropdown-end">
@@ -140,7 +143,7 @@ export default function Navbar() {
                 <div className="w-10 rounded-full">
                   <img
                     alt="User Avatar"
-                    src={user?.photoURL }
+                    src={user?.photoURL}
                   />
                 </div>
               </button>
